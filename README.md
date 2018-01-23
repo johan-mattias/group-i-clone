@@ -2,7 +2,7 @@
 
 ## Requirements
 - MySQL installed
-- Port: 8889
+- Port: 3000
 - Recent version of Node.js installed
 
 ## Setup: 
