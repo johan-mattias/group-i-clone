@@ -1,13 +1,20 @@
 # Platform-Spanning-Systems-Group-I¨
 
-## You need to have npm installed:
-To do so run you need to have a recent version of Node.js installed and install create-react-app: 
+## Requirements
+- MySQL installed
+- Port: 8889
+- Recent version of Node.js installed
+
+## Setup: 
 ```
 npm install -g create-react-app
 ```
 
-## To run server:
-```
-npm start
-```
-if you recive an error try run ``` npm install ``` to get the project in the correct shape
+## How to run
+- `npm install` (do this in backend/ and frontend/ as well)
+- `npm run start`
+
+Bravissimo, you're done!
+
+### Trello
+https://trello.com/b/UXSGVccb/platform-spanning-systems-group-i
