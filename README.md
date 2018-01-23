@@ -6,7 +6,7 @@ To do so run you need to have a recent version of Node.js installed and install 
 npm install -g create-react-app
 ```
 
-## To run server you run:
+## To run server:
 ```
 npm start
 ```
