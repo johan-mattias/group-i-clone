@@ -28,9 +28,11 @@ class Login extends React.Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <p>NAME:</p>
+          <p>EMAIL:</p>
           <input type="email" value={this.state.email} onChange={this.EmailClick.bind(this)} />
+          <p>PASSWORD:</p>
           <input type="password" value={this.state.password} onChange={this.PwdClick.bind(this)} />
+          <br></br>
           <input type="submit" value="LOGIN" />
         </form>
       </div>
