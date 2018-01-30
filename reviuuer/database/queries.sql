@@ -6,24 +6,26 @@ CREATE TABLE reviuuer.user (
     id int NOT NULL AUTO_INCREMENT,
     userName varchar(255),
     pWord varchar(255),
-	PRIMARY KEY (ID)
+	PRIMARY KEY (id)
 );
 
-CREATE TABLE reviuuer.like (
+CREATE TABLE reviuuer.course (
 	id int NOT NULL AUTO_INCREMENT,
-	user_id int, 
-	review_id int,
-  	like_type ENUM('like', 'dislike'),
-	comment_id int,
-	PRIMARY KEY (ID)
+	c_level ENUM('G1', 'G2', 'A1', 'A2'),
+	pace_of_study int,
+	teaching_form varchar(255),
+	course_language ENUM('English', 'Swedish', 'Other'),
+	app_code varchar(255),
+	course_online bool,
+	PRIMARY KEY (id)
 );
 
-CREATE TABLE reviuuer.comments (
+CREATE TABLE reviuuer.teacher (
 	id int NOT NULL AUTO_INCREMENT,
-	user_id int,
-	review_id int,
-	comment_text varchar(255),
-	PRIMARY KEY (ID)
+	first_name varchar(255),
+	last_name varchar(255),
+	title varchar(255),
+	PRIMARY KEY (id)
 );
 
 CREATE TABLE reviuuer.review (
@@ -39,7 +41,31 @@ CREATE TABLE reviuuer.review (
 	exam bool,
 	courseReview varchar(255),
 	teacherReview varchar(255),
-	PRIMARY KEY (ID)
+	PRIMARY KEY (id),
+	FOREIGN KEY (course_id) REFERENCES reviuuer.course(id),
+	FOREIGN KEY (teacher_id) REFERENCES reviuuer.teacher(id)
+);
+
+CREATE TABLE reviuuer.likeAndDislike (
+	id int NOT NULL AUTO_INCREMENT,
+	user_id int, 
+	review_id int,
+	comment_id int,
+  	like_type ENUM('like', 'dislike'),
+	PRIMARY KEY (id),
+	FOREIGN KEY (user_id) REFERENCES reviuuer.user(id),
+	FOREIGN KEY (review_id) REFERENCES reviuuer.review(id),
+	FOREIGN KEY (comment_id) REFERENCES reviuuer.comment(id)
+);
+
+CREATE TABLE reviuuer.comments (
+	id int NOT NULL AUTO_INCREMENT,
+	user_id int,
+	review_id int,
+	comment_text varchar(255),
+	PRIMARY KEY (id),
+	FOREIGN KEY (user_id) REFERENCES reviuuer.user(id),
+	FOREIGN KEY (review_id) REFERENCES reviuuer.review(id)
 );
 
 CREATE TABLE reviuuer.report (
@@ -48,18 +74,10 @@ CREATE TABLE reviuuer.report (
 	review_id int,
 	comment_id int,
 	description varchar(255),
-	PRIMARY KEY (ID)
-);
-
-CREATE TABLE reviuuer.course (
-	id int NOT NULL AUTO_INCREMENT,
-	c_level ENUM('G1', 'G2', 'A1', 'A2'),
-	pace_of_study int,
-	teaching_form varchar(255),
-	course_language ENUM('English', 'Swedish', 'Other'),
-	app_code varchar(255),
-	course_online bool,
-	PRIMARY KEY (ID)
+	PRIMARY KEY (id),
+	FOREIGN KEY (user_id) REFERENCES reviuuer.user(id),
+	FOREIGN KEY (review_id) REFERENCES reviuuer.review(id),
+	FOREIGN KEY (comment_id) REFERENCES reviuuer.comment(id)
 );
 
 CREATE TABLE reviuuer.period (
@@ -68,20 +86,15 @@ CREATE TABLE reviuuer.period (
 	credits int,
 	period int,
 	semester ENUM('VT', 'HT'),
-	PRIMARY KEY (ID)
+	PRIMARY KEY (id),
+	FOREIGN KEY (course_id) REFERENCES reviuuer.course(id)
 );
 
 CREATE TABLE reviuuer.courseAndTeacher (
 	id int NOT NULL AUTO_INCREMENT,
 	course_id int,
 	teacher_id int,
-	PRIMARY KEY (ID)
-);
-
-CREATE TABLE reviuuer.teacher (
-	id int NOT NULL AUTO_INCREMENT,
-	first_name varchar(255),
-	last_name varchar(255),
-	title varchar(255),
-	PRIMARY KEY (ID)
+	PRIMARY KEY (id),
+	FOREIGN KEY (course_id) REFERENCES reviuuer.course(id),
+	FOREIGN KEY (teacher_id) REFERENCES reviuuer.teacher(id)
 );
