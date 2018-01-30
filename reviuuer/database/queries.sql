@@ -98,3 +98,20 @@ CREATE TABLE reviuuer.courseAndTeacher (
 	FOREIGN KEY (course_id) REFERENCES reviuuer.course(id),
 	FOREIGN KEY (teacher_id) REFERENCES reviuuer.teacher(id)
 );
+
+CREATE TABLE reviuuer.program (
+	id int NOT NULL AUTO_INCREMENT,
+	name varchar(255),
+	credits int,
+	master bool,
+	PRIMARY KEY (id)
+);
+
+CREATE TABLE reviuuer.courseAndProgram (
+	id int NOT NULL AUTO_INCREMENT,
+	course_id int,
+	program_id int,
+	PRIMARY KEY (id),
+	FOREIGN KEY (course_id) REFERENCES reviuuer.course(id),
+	FOREIGN KEY (program_id) REFERENCES reviuuer.program(id)
+);
