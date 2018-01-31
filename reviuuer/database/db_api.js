@@ -8,7 +8,7 @@ const connection = mysql.createConnection({
 });
 
 connection.connect((error) => {
-  if(error) throw error;
+  if(error) console.error(error);
   console.log('Connected!');
 });
 
@@ -18,7 +18,7 @@ const getReviews = () => {
     sql: 'SELECT * FROM review',
     timeout: 40000, // 40s
   }, function (error, results, fields) {
-    if(error) throw error;
+    if(error) console.error(error);
   
     if(results.length) {
       console.log(results);
@@ -27,13 +27,14 @@ const getReviews = () => {
   });
 }
 
+
 const authenticateUser = (user, password) => {
   connection.query({
     sql: 'SELECT * FROM user WHERE username = ? AND password = ?',
     timeout: 40000, // 40s
     values: [user, password]
   }, function (error, results, fields) {
-    if(error) throw error;
+    if(error) console.error(error);
 
     if(results.length & password == results[0].password && user == results[0].username) {
       console.log('Authentication accepted');
