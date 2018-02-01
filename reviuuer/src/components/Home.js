@@ -4,18 +4,40 @@ import '../Style/App.css';
 import login from './LoginPage.js'
 import splash from './Splash.js'
 
+class Home extends React.Component {
+    
+    state = {
+    response: ''
+  };
+  
+    componentDidMount() {
+    this.callApi()
+      .then(res => this.setState({ response: res.express }))
+      .catch(err => console.log(err));
+    }
 
-const Home = () => (
-  <Router>
-    <div>
-      <ul>
-        <li><Link to="/">HOME</Link></li>
-        <li><Link to="/login">LOGIN</Link></li>
-      </ul>
-      <Route path="/"  exact component={ splash }/>
-      <Route path="/login" exact component={ login }/>
-    </div>
-  </Router>
-)
+    callApi = async () => {
+    const response = await fetch('/api/hello');
+    const body = await response.json();
+    console.log(body)
+    if (response.status !== 200) throw Error(body.message);
+    return body;
+    };
+
+  render() {
+    return (
+        <Router>
+          <div>
+            <ul>
+              <li><Link to="/">HOME</Link></li>
+              <li><Link to="/login">LOGIN</Link></li>
+            </ul>
+            <Route path="/"  exact component={ splash }/>
+            <Route path="/login" exact component={ login }/>
+          </div>
+        </Router>
+    );
+  };
+}
 
 export default Home;
