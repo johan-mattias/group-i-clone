@@ -7,8 +7,8 @@ class Reviews extends React.Component {
     access: false
   }
 
-  componentDidMount = () => {
-    fetch('/api/auth?username=admin&password=1234')
+  componentWillMount = () => {
+    fetch('/api/auth?username=adin&password=1234')
       .then(
         (res) => { 
         if(res.status !== 200) {
@@ -47,9 +47,10 @@ class Reviews extends React.Component {
         
         <ul>
           {this.state.reviews ? this.state.reviews.map(review => 
-            <li id={review.id}>
-              {review.course_review} => {review.teacher_review}
-            </li>
+            <Review 
+              key={review.id} 
+              review={review} 
+            />
           ) : undefined}
         </ul>
       </div>
