@@ -10,7 +10,7 @@ const NavbarButton = ({ onClick, children, changeStyle}) => {
         width: '125px',
         height: '69px',
     }
-    console.log(changeStyle)
+    
     return (
         <button 
             onClick = {onClick} 

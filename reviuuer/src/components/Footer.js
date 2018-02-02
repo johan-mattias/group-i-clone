@@ -5,7 +5,7 @@ class Footer extends Component{
     
 
     state = { 
-        lightBlue : [true, true, true]
+        lightBlue : [false, true, true]
     }
 
     changeColor(number){
