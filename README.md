@@ -2,10 +2,10 @@
 
 ## Requirements
 - MySQL installed
-- Port: 3000
+- Port: 8889
 - Recent version of Node.js installed
 
-# Database setup
+## Database config
 - host: 'localhost',
 - port: '8889',
 - user: 'root',
