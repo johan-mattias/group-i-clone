@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {ReactDOM, BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import '../Style/App.css';
 import login from './LoginPage.js'
+import Register from './RegisterPage';
 import splash from './Splash.js'
 import FrontPageButton from './FrontPageButton.js'
 import frontButton from '../Style/frontButton.css'
@@ -38,9 +39,17 @@ class Home extends React.Component {
             <ul>
               <li><Link to="/">HOME</Link></li>
               <li><Link to="/login">LOGIN</Link></li>
+              <li><Link to="/register">REGISTER</Link></li>
+              <li><Link to="/reviews">REVIEWS</Link></li>
             </ul>
             <Route path="/"  exact component={ splash }/>
             <Route path="/login" exact component={ login }/>
+            <Route path="/register" exact component={ Register }/>
+            <Route path="/reviews" exact component={ reviews }/>
+            <div class="flex-container">
+              <FrontPageButton>Sign in</FrontPageButton> 
+              <FrontPageButton>Sign up</FrontPageButton>
+              <SendButton>send</SendButton>
             </div>
         </Router>
     );
