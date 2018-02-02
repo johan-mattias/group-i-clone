@@ -2,9 +2,10 @@ import urllib.request
 import json
 from tkinter import *
 
-
+''' 
 req = urllib.request.urlopen('https://jsonplaceholder.typicode.com/users')
 data = json.loads(req.read().decode())
+ '''
 ''' 
 print(data[0]['address']['city'])
 to_print = str(data[0]['address'])
@@ -19,8 +20,10 @@ get_data = open('./database/mock_reviews.json')
 mock_data = json.load(get_data)
 print(mock_data[0])
 
+'''
+Settings för textfönstret
+'''
 root = Tk()
-
 
 S = Scrollbar()
 T = Text(root, height =150, width =150)
@@ -29,10 +32,11 @@ T.pack(side=LEFT, fill=Y)
 S.config(command=T.yview)
 T.config(yscrollcommand=S.set)
 
-
 review = ""
 
-
+'''
+Loopa igenom varje JSON object och populera strängsen till textfönstret
+'''
 for i in range(len(mock_data)):
     quality = str(mock_data[i]['quality'])
     course_id = str(mock_data[i]['course_id'])
@@ -47,22 +51,11 @@ for i in range(len(mock_data)):
     exam = str(mock_data[i]['exam'])
     asdf_id = str(mock_data[i]['id'])
     review += "Quality: " + quality + "\nCourse ID: " + course_id + "\nTeacher review: " + teacher_review + "\nBooks required: " + books_req + "\nCourse review: " + course_review + "\nRecommendation: " + can_recommend + "\nPercentage mandatory: " + percentage_mand + "\nworth_credits" + worth_credits + "\nDifficulty: " +difficulty + "\nExam: " +exam + "\n\n\n"
+
+'''
+Populera textfönstret
+'''
 T.insert(END, review)
-
-
-
-    
-''' 
-    theLabel = Label(root, text= "Quality: "+ quality + "\n")
-    theLabel.pack() '''
-
-
-''' 
-for i in range(len(data)):
-    to_print = str(data[i])
-    theLabel = Label(root, text="" + to_print)
-    theLabel.pack()
- '''
 
 root.mainloop()
 
