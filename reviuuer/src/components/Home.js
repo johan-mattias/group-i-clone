@@ -4,6 +4,8 @@ import '../Style/App.css';
 import login from './LoginPage.js'
 import splash from './Splash.js'
 import reviews from './Reviews.js'
+import NavbarButton from './NavbarButton';
+import Footer from './Footer';
 
 class Home extends React.Component {
     
@@ -34,6 +36,7 @@ class Home extends React.Component {
               <li><Link to="/login">LOGIN</Link></li>
               <li><Link to="/reviews">REVIEWS</Link></li>
             </ul>
+            <Footer/>
             <Route path="/"  exact component={ splash }/>
             <Route path="/login" exact component={ login }/>
             <Route path="/reviews" exact component={ reviews }/>

@@ -100,3 +100,5 @@ ENV/
 # mypy
 .mypy_cache/
 .DS_store
+
+/reviuuer/backend/node_modules
