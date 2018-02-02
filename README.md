@@ -11,8 +11,10 @@ npm install -g create-react-app
 ```
 
 ## How to run
-- `npm install` (do this in backend/ and frontend/ as well)
-- `npm run start`
+- `npm install nodemon -g`
+- `make install`
+- `make server` (to start the server on terminal)
+- `make client` (to start a client on another terminal)
 
 Bravissimo, you're done!
 
