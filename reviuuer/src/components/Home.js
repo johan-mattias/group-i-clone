@@ -51,6 +51,7 @@ class Home extends React.Component {
               <FrontPageButton>Sign up</FrontPageButton>
               <SendButton>send</SendButton>
             </div>
+          </div>
         </Router>
     );
   };
