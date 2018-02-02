@@ -30,11 +30,11 @@ class Login extends React.Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <input class="login" type="email" placeholder="Email" value={this.state.email} onChange={this.EmailClick.bind(this)} />
+          <input className="login" type="email" placeholder="Email" value={this.state.email} onChange={this.EmailClick.bind(this)} />
           <br></br>
-          <input class="login" type="password" placeholder="Password" value={this.state.password} onChange={this.PwdClick.bind(this)} />
+          <input className="login" type="password" placeholder="Password" value={this.state.password} onChange={this.PwdClick.bind(this)} />
           <br></br>
-          <input class="login" type="submit" value="LOGIN" />
+          <input className="login" type="submit" value="LOGIN" />
         </form>
       </div>
     );

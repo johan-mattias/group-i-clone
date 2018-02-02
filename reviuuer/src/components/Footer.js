@@ -9,13 +9,13 @@ class Footer extends Component{
     }
 
     changeColor(number){
-        if(number == 0){
+        if(number === 0){
             this.setState({lightBlue : [false, true, true]})
         }
-        if(number == 1){
+        if(number === 1){
             this.setState({lightBlue : [true, false, true]})
         }
-        if(number == 2){
+        if(number === 2){
             this.setState({lightBlue : [true, true, false]})
         }        
 

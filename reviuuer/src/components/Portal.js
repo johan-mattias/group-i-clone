@@ -22,7 +22,7 @@ class Portal extends React.Component {
 
             <Footer/>
             <Route path="/reviews" exact component={ reviews }/>
-              <SendButton>send</SendButton>
+              {/*<SendButton>send</SendButton>*/}
             </div>
         </Router>
     );
