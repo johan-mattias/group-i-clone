@@ -10,3 +10,7 @@ server:
 # Run client
 client:
 	cd ./reviuuer && npm start
+
+# Run server and client in one terminal
+start:
+	concurrently "cd ./reviuuer && npm start" "cd ./reviuuer/backend && nodemon"
