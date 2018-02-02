@@ -4,7 +4,7 @@ import '../Style/App.css';
 import login from './LoginPage.js'
 import splash from './Splash.js'
 import FrontPageButton from './FrontPageButton.js'
-import frontButton from './frontButton.css'
+import frontButton from '../Style/frontButton.css'
 import SendButton from './SendButton.js'
 import reviews from './Reviews.js'
 import NavbarButton from './NavbarButton';
@@ -38,25 +38,10 @@ class Home extends React.Component {
             <ul>
               <li><Link to="/">HOME</Link></li>
               <li><Link to="/login">LOGIN</Link></li>
-              <li><Link to="/reviews">REVIEWS</Link></li>
             </ul>
-
-            <Link to="/login">
-                <SignOutButton>
-                     Sign Out
-                </SignOutButton>
-            </Link>
-
-            <Footer/>
             <Route path="/"  exact component={ splash }/>
             <Route path="/login" exact component={ login }/>
-            <Route path="/reviews" exact component={ reviews }/>
-            <div class="flex-container">
-              <FrontPageButton>Sign in</FrontPageButton> 
-              <FrontPageButton>Sign up</FrontPageButton>
-              <SendButton>send</SendButton>
             </div>
-          </div>
         </Router>
     );
   };
