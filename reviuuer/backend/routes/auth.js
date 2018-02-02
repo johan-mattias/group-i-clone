@@ -14,7 +14,7 @@ const authenticateUser = (user, password, cb) => {
 
       if(error) console.error(error);
   
-      if(results.length & password == results[0].password && user == results[0].username) {
+      if(results.length && password == results[0].password && user == results[0].username) {
         console.log('Authentication accepted');
         cb(error, true);
         return;
@@ -29,14 +29,8 @@ const authenticateUser = (user, password, cb) => {
 
 /* GET home page. */
 router.get('/', function(req, res) {
-    console.log(req.param('username'));
-    console.log(req.param('password'));
-
     var username = req.param('username') ? req.param('username') : undefined;
     var password = req.param('password') ? req.param('password') : undefined;
-
-    console.log(username);
-    console.log(password);
 
     if(username !== undefined && password !== undefined) {
       authenticateUser(username, password, (error, access) => {
