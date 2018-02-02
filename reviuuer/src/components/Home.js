@@ -3,6 +3,8 @@ import {ReactDOM, BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import '../Style/App.css';
 import login from './LoginPage.js'
 import splash from './Splash.js'
+import NavbarButton from './NavbarButton';
+import Footer from './Footer';
 
 class Home extends React.Component {
     
@@ -32,6 +34,7 @@ class Home extends React.Component {
               <li><Link to="/">HOME</Link></li>
               <li><Link to="/login">LOGIN</Link></li>
             </ul>
+            <Footer/>
             <Route path="/"  exact component={ splash }/>
             <Route path="/login" exact component={ login }/>
           </div>
