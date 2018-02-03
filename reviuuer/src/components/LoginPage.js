@@ -20,7 +20,7 @@ class Login extends React.Component {
     this.setState({password: event.target.value});
   }
 
-  handleSubmit(event) { //TODO LÄGGA IN SÅ VI KOLLAR I DB 
+  handleSubmit(event) {
     event.preventDefault();
     var email = this.state.email
     var pwd = this.state.password
