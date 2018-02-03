@@ -10,18 +10,19 @@ import splash from './FrontPageButton';
 
 class Home extends React.Component {
 
+  componentWillMount() {
+    document.body.classList.add('home');
+  }
+
   render() {
     return (
         <Router>
-          <div className="flex-container blueBackground">
+          <div className="flex-container home">
             <h1><Link className="link logo" to="/">ReviUUer</Link></h1>
-              <ul>
-                <li><Link to="/">HOME</Link></li>
-                <li><Link to="/login">LOGIN</Link></li>
-                <li><Link to="/register">REGISTER</Link></li>
+              {/*<ul>
                 <li><Link to="/reviews">REVIEWS</Link></li>
                 <li><Link to="/addreview">ADD REVIEWS</Link></li>
-              </ul>
+              </ul>*/}
               <Route path="/" exact component={ splash }/>
               <Route path="/login" exact component={ login }/>
               <Route path="/register" exact component={ Register }/>
