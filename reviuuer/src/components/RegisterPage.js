@@ -63,7 +63,7 @@ class Register extends Component {
           <br></br>
           <input className="login" type="password" placeholder="Password" value={this.state.passwordVerify} onChange={this.PwdClickCheck.bind(this)} />
           <br></br>
-          <input className="submit" type="submit" value="LOGIN" />
+          <input className="submit" type="submit" value="REGISTER" />
         </form>
       </div>
     );
