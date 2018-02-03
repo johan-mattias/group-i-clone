@@ -4,9 +4,10 @@ import FrontPageButton from './FrontPageButton.js'
 import frontButton from '../Style/frontButton.css'
 import SendButton from './SendButton.js'
 import Reviews from './Reviews.js'
-import NavbarButton from './NavbarButton';
 import Footer from './Footer';
 import SignOutButton from './SignOutButton'
+import Home from './Home.js'
+import '../Style/Button.css'
 
 class Portal extends React.Component {
 
@@ -14,10 +15,12 @@ class Portal extends React.Component {
     return (
         <Router>
           <div>
-            <Link to="/login">
+            <div className = "signOut">
+            <Link to="/">
                 <SignOutButton> Sign Out </SignOutButton>
             </Link>
-
+            </div>
+            <Route path="/" exact component={ Home }/>
             <Footer/>
             <Route path="/reviews" exact component={ Reviews }/>
               {/*<SendButton>send</SendButton>*/}

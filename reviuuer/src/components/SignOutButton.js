@@ -8,7 +8,7 @@ const SignOutButton = ({ onClick, children, changeStyle}) => {
         fontSize: '25px',
         width: '160px',
         height: '46px',
-        borderRadius:'30px',
+        borderRadius:'45px',
     }
 
     return (
