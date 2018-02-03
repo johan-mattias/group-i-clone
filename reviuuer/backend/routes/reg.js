@@ -4,6 +4,8 @@ var mysql = require('mysql');
 var mysqlConf = require('../config.js').mysql_pool;
 var bodyParser = require('body-parser');
 
+var bcrypt = require('bcrypt');
+const saltRounds = 10;
 
 const registerUser = (email, password, cb) => {
   mysqlConf.getConnection(function (err, connection) {
@@ -28,15 +30,17 @@ const registerUser = (email, password, cb) => {
 /* POST new user. */
 router.post('/', function(req, res) {
     var email = req.param('email') ? req.param('email') : undefined;
-    var password = req.param('password') ? req.param('password') : undefined;
+    var myPlaintextPassword = req.param('password') ? req.param('password') : undefined;
 
-    if(email !== undefined && password !== undefined) {
-      registerUser(email, password, (error, added) => {
-        if(added) {
-            console.log('New user added')
-            res.json({added: true});
-        } 
-      });
+    if(email !== undefined && myPlaintextPassword !== undefined) {
+      bcrypt.hash(myPlaintextPassword, saltRounds, function(err, hash) {
+        registerUser(email, hash, (error, added) => {
+          if(added) {
+              console.log('New user added')
+              res.json({added: true});
+          } 
+        });
+      }); 
     } else {
       console.log('Invalid inputs')
       res.json({added: false});
