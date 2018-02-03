@@ -1,31 +1,16 @@
 import React, { Component } from 'react'
+import {ReactDOM, Link} from 'react-router-dom';
+import '../Style/App.css';
 
 
 
-const FrontPageButton = ({onClick, children, modStyle }) =>{
-  
-
+const FrontPageButton = () =>{
   return (
-    <button
-      onClick={onClick}
-      style={{
-        marginBottom: '15px',
-        backgroundColor: 'white',
-        fontFamily: 'Roboto',
-        color: '#4F4F4F',
-        height: '92px',
-        width: '274px',
-        borderRadius: '20px',
-        borderStyle: 'solid',
-        fontSize: '35px'
-      }}
-        >
-      {children}
-    </button>
-  );
-
-
-  
+    <div>
+        <button className="home"><Link className="link" to="/register">Sign up</Link></button>
+        <button className="home"><Link className="link" to="/login">Sign in</Link></button>
+    </div>
+  )
 };
 
 export default FrontPageButton;
