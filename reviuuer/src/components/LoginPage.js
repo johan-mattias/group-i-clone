@@ -1,7 +1,7 @@
 import React from 'react';
 import {ReactDOM, BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import sendButton from './SendButton.js'
-import '../Style/LoginPage.css';
+import '../Style/Button.css';
 
 class Login extends React.Component {
   constructor(props) {
@@ -21,9 +21,17 @@ class Login extends React.Component {
   }
 
   handleSubmit(event) { //TODO LÄGGA IN SÅ VI KOLLAR I DB 
-    alert('A email was submitted: ' + this.state.email);
-    alert('A password was submitted: ' + this.state.password);
-    event.preventDefault();
+    fetch('/api/user', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            username: this.state.email,
+            password: this.state.password
+        })
+    })
   }
 
   render() {
@@ -34,7 +42,7 @@ class Login extends React.Component {
           <br></br>
           <input className="login" type="password" placeholder="Password" value={this.state.password} onChange={this.PwdClick.bind(this)} />
           <br></br>
-          <input className="login" type="submit" value="LOGIN" />
+          <input className="submit" type="submit" value="LOGIN" />
         </form>
       </div>
     );
