@@ -21,20 +21,26 @@ class Login extends React.Component {
   }
 
   handleSubmit(event) { //TODO LÄGGA IN SÅ VI KOLLAR I DB 
-    var myObject = fetch('/api/auth', {
-        method: 'GET',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            username: this.state.email,
-            password: this.state.password
-        })
-    })
-
-    console.log(myObject);
     event.preventDefault();
+    var email = this.state.email
+    var pwd = this.state.password
+    var fetchURL = `/api/auth?username=${email}&password=${pwd}`;
+    console.log(fetchURL)
+    fetch( fetchURL )
+      .then(
+        (res) => { 
+        if(res.status !== 200) {
+          console.log('Looks like there was a problem. Status Code: ' +
+            res.status);
+          return;
+        }
+        res.json()
+          .then((json) => { 
+            const access = json.access
+            console.log(access)
+            this.setState({access})
+          })
+        })
   }
 
   render() {
