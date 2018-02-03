@@ -22,7 +22,7 @@
   font-size: large;
 }
 
-h1 {
+h1.logo {
     font-family: Roboto;
     color: #FFFFFF;
     font-size: 48px;
@@ -40,4 +40,11 @@ h1 {
 .link{
   text-decoration: none;
 }
+
+.link.logo{
+  font-family: Roboto;
+  color: #FFFFFF;
+  font-size: 48px;
+}
+
 
