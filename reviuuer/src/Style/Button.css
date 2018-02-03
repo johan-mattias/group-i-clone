@@ -43,3 +43,20 @@ button.nav:focus {
 
 
 
+
+      
+
+button.home {
+      margin-bottom: 15px;
+      background-color: white;
+      font-family: Roboto;
+      color: #4F4F4F;
+      height: 92px;
+      width: 274px;
+      border-radius: 20px;
+      border-style: solid;
+      font-Size: 35px;
+      
+
+}
+

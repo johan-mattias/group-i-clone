@@ -2,6 +2,8 @@ import React from 'react';
 import {ReactDOM, BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import sendButton from './SendButton.js'
 import '../Style/Button.css';
+import splash from './Splash.js'
+
 
 class Login extends React.Component {
   constructor(props) {
@@ -45,8 +47,15 @@ class Login extends React.Component {
 
   render() {
     return (
+      
       <div>
-        <form onSubmit={this.handleSubmit}>
+      <h1 style={{                   
+          fontFamily: 'Roboto',
+          color: '#FFFFFF',
+          fontSize: '48px'
+
+        }}>ReviUUer</h1>   
+          <form onSubmit={this.handleSubmit}>
           <input className="login" placeholder="Email" value={this.state.email} onChange={this.EmailClick.bind(this)} /> {/*TODO addtype="email"*/}
           <br></br>
           <input className="login" type="password" placeholder="Password" value={this.state.password} onChange={this.PwdClick.bind(this)} />
