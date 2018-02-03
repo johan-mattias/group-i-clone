@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import NavbarButton from './NavbarButton'
+import '../Style/Button.css'
 
 class Footer extends Component{
     
@@ -34,9 +35,9 @@ class Footer extends Component{
         
         return(
             <div> 
-            <NavbarButton changeStyle={bgColorHome} onClick={() => {this.changeColor(0)}}>Home</NavbarButton>
-            <NavbarButton changeStyle={bgColorCourse} onClick={() => {this.changeColor(1)}}>Course</NavbarButton>
-            <NavbarButton changeStyle={bgColorTeacher} onClick={() => {this.changeColor(2)}}>Teacher</NavbarButton>
+            <button className="nav" changeStyle={bgColorHome} onClick={this.changeColor(0)}>Home</button>
+            <button className="nav" changeStyle={bgColorCourse} onClick={this.changeColor(1)}>Course</button>
+            <button className="nav" changeStyle={bgColorTeacher} onClick={this.changeColor(2)}>Teacher</button>
                 
             </div>
         )

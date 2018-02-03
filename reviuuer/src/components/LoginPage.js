@@ -22,7 +22,7 @@ class Login extends React.Component {
 
   handleSubmit(event) { //TODO LÄGGA IN SÅ VI KOLLAR I DB 
     var myObject = fetch('/api/auth', {
-        method: 'POST',
+        method: 'GET',
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
