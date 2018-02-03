@@ -25,6 +25,7 @@ input.submit {
       fill: solid;
 }
 
+
 button.nav{
       background-color: #2F80ED;
       border: 1px solid white;
@@ -33,9 +34,12 @@ button.nav{
       font-size: 25px;
       width: 125px;
       height: 69px;
+   
 }
 
 button.nav:focus {
       background-color: #3B5E8F;
   }
+
+
 

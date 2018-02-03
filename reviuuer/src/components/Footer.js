@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import '../Style/Button.css'
+import '../Style/Portal.css'
 
 class Footer extends Component{
 
@@ -7,7 +8,7 @@ class Footer extends Component{
     render(){
 
         return(
-            <div> 
+            <div className = "footer"> 
             <button className="nav">Home</button>
             <button className="nav" >Course</button>
             <button className="nav" >Teacher</button>    

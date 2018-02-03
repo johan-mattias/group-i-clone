@@ -18,6 +18,7 @@ const provider = (
                 </Switch>
             </div>
         </Router>
+
 );
 
 ReactDOM.render(provider, document.getElementById('root'));

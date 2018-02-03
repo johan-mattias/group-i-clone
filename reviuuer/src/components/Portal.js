@@ -7,6 +7,7 @@ import Reviews from './Reviews.js'
 import Footer from './Footer';
 import SignOutButton from './SignOutButton'
 import Home from './Home.js'
+import '../Style/Button.css'
 
 class Portal extends React.Component {
 
@@ -19,7 +20,6 @@ class Portal extends React.Component {
             </Link>
 
             <Route path="/" exact component={ Home }/>
-
             <Footer/>
             <Route path="/reviews" exact component={ Reviews }/>
               {/*<SendButton>send</SendButton>*/}
