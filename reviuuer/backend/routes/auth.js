@@ -3,18 +3,18 @@ var router = express.Router();
 var mysql = require('mysql');
 var mysqlConf = require('../config.js').mysql_pool;
 
-const authenticateUser = (user, password, cb) => {
+const authenticateUser = (email, password, cb) => {
   mysqlConf.getConnection(function (err, connection) {
     connection.query({
-      sql: 'SELECT * FROM user WHERE username = ? AND password = ?',
+      sql: 'SELECT * FROM user WHERE email = ? AND password = ?',
       timeout: 40000, // 40s
-      values: [user, password]
+      values: [email, password]
     }, function (error, results, fields) {
       connection.release();
 
       if(error) console.error(error);
   
-      if(results.length && password == results[0].password && user == results[0].username) {
+      if(results.length && password == results[0].password && email == results[0].email) {
         console.log('Authentication accepted');
         cb(error, true);
         return;
@@ -29,11 +29,11 @@ const authenticateUser = (user, password, cb) => {
 
 /* GET home page. */
 router.get('/', function(req, res) {
-    var username = req.param('username') ? req.param('username') : undefined;
+    var email = req.param('email') ? req.param('email') : undefined;
     var password = req.param('password') ? req.param('password') : undefined;
 
-    if(username !== undefined && password !== undefined) {
-      authenticateUser(username, password, (error, access) => {
+    if(email !== undefined && password !== undefined) {
+      authenticateUser(email, password, (error, access) => {
         if(access) {
             console.log('Authenticated')
             res.json({access: true});

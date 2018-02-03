@@ -5,12 +5,12 @@ var mysqlConf = require('../config.js').mysql_pool;
 var bodyParser = require('body-parser');
 
 
-const registerUser = (user, password, cb) => {
+const registerUser = (email, password, cb) => {
   mysqlConf.getConnection(function (err, connection) {
     connection.query({
-      sql: 'INSERT INTO user (username, password) VALUES (?, ?)',
+      sql: 'INSERT INTO user (email, password) VALUES (?, ?)',
       timeout: 40000, // 40s
-      values: [user, password]
+      values: [email, password]
     }, function (error, results, fields) {
       connection.release();
 
@@ -27,11 +27,11 @@ const registerUser = (user, password, cb) => {
 
 /* POST new user. */
 router.post('/', function(req, res) {
-    var username = req.param('username') ? req.param('username') : undefined;
+    var email = req.param('email') ? req.param('email') : undefined;
     var password = req.param('password') ? req.param('password') : undefined;
 
-    if(username !== undefined && password !== undefined) {
-      registerUser(username, password, (error, added) => {
+    if(email !== undefined && password !== undefined) {
+      registerUser(email, password, (error, added) => {
         if(added) {
             console.log('New user added')
             res.json({added: true});
