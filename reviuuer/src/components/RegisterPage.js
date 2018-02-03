@@ -57,11 +57,11 @@ class Register extends Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <input className="login" placeholder="Email" value={this.state.email} onChange={this.EmailClick.bind(this)} />
+          <input className="login" placeholder="Email" value={this.state.email} onChange={this.EmailClick.bind(this)} /> {/*TODO add type="email"*/}
           <br></br>
-          <input className="login" placeholder="Password" value={this.state.password} onChange={this.PwdClick.bind(this)} />
+          <input className="login" type="password" placeholder="Password" value={this.state.password} onChange={this.PwdClick.bind(this)} />
           <br></br>
-          <input className="login" placeholder="Password" value={this.state.passwordVerify} onChange={this.PwdClickCheck.bind(this)} />
+          <input className="login" type="password" placeholder="Password" value={this.state.passwordVerify} onChange={this.PwdClickCheck.bind(this)} />
           <br></br>
           <input className="submit" type="submit" value="LOGIN" />
         </form>
