@@ -35,7 +35,7 @@ class Home extends React.Component {
   render() {
     return (
         <Router>
-          <div>
+          <div className="flex-container">
             <ul>
               <li><Link to="/">HOME</Link></li>
               <li><Link to="/login">LOGIN</Link></li>
@@ -48,11 +48,6 @@ class Home extends React.Component {
             <Route path="/register" exact component={ Register }/>
             <Route path="/reviews" exact component={ reviews }/>
             <Route path="/addreview" exact component={ addReview }/>
-            <div className="flex-container">
-              <FrontPageButton>Sign in</FrontPageButton> 
-              <FrontPageButton>Sign up</FrontPageButton>
-              <SendButton>send</SendButton>
-            </div>
           </div>
         </Router>
     );
