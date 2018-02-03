@@ -6,6 +6,7 @@ import SendButton from './SendButton.js'
 import Reviews from './Reviews.js'
 import Footer from './Footer';
 import SignOutButton from './SignOutButton'
+import Home from './Home.js'
 
 class Portal extends React.Component {
 
@@ -13,9 +14,11 @@ class Portal extends React.Component {
     return (
         <Router>
           <div>
-            <Link to="/login">
+            <Link to="/">
                 <SignOutButton> Sign Out </SignOutButton>
             </Link>
+
+            <Route path="/" exact component={ Home }/>
 
             <Footer/>
             <Route path="/reviews" exact component={ Reviews }/>
