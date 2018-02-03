@@ -40,7 +40,7 @@ class Login extends React.Component {
             const access = json.access
             if (access === true) {
               console.log("Push")
-              this.props.dispatch(push('/portal'));
+              this.props.push('/portal');
              }
             console.log(access)
             // this.setState({access})
@@ -52,12 +52,6 @@ class Login extends React.Component {
     return (
       
       <div>
-      <h1 style={{                   
-          fontFamily: 'Roboto',
-          color: '#FFFFFF',
-          fontSize: '48px'
-
-        }}>ReviUUer</h1>   
           <form onSubmit={this.handleSubmit}>
           <input className="login" placeholder="Email" value={this.state.email} onChange={this.EmailClick.bind(this)} /> {/*TODO addtype="email"*/}
           <br></br>
