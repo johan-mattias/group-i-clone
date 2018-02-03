@@ -1,5 +1,5 @@
 import React from 'react';
-import {ReactDOM, BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import {ReactDOM, BrowserRouter as Router, Route, Link, push} from 'react-router-dom';
 import sendButton from './SendButton.js'
 import '../Style/Button.css';
 
@@ -25,7 +25,6 @@ class Login extends React.Component {
     var email = this.state.email
     var pwd = this.state.password
     var fetchURL = `/api/auth?username=${email}&password=${pwd}`;
-    console.log(fetchURL)
     fetch( fetchURL )
       .then(
         (res) => { 
@@ -37,8 +36,12 @@ class Login extends React.Component {
         res.json()
           .then((json) => { 
             const access = json.access
+            if (access === true) {
+              console.log("Push")
+              this.props.dispatch(push('/portal'));
+             }
             console.log(access)
-            this.setState({access})
+            // this.setState({access})
           })
         })
   }
