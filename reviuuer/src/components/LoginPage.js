@@ -25,7 +25,7 @@ class Login extends React.Component {
     event.preventDefault();
     var email = this.state.email
     var pwd = this.state.password
-    var fetchURL = `/api/auth?username=${email}&password=${pwd}`;
+    var fetchURL = `/api/auth?email=${email}&password=${pwd}`;
     fetch( fetchURL )
       .then(
         (res) => { 
@@ -38,9 +38,13 @@ class Login extends React.Component {
           .then((json) => { 
             const access = json.access
             if (access === true) {
-              console.log("Push")
-              this.props.push('/portal');
+              console.log("Push , correct password")
+
+              // this.props.push('/portal');
              }
+            else {
+              console.log("Wrong username or password")
+            }
             console.log(access)
             // this.setState({access})
           })
