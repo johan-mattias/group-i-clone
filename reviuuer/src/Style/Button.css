@@ -35,3 +35,7 @@ button.nav{
       height: 69px;
 }
 
+button.nav:focus {
+      background-color: #3B5E8F;
+  }
+

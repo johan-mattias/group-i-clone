@@ -4,7 +4,6 @@ import FrontPageButton from './FrontPageButton.js'
 import frontButton from '../Style/frontButton.css'
 import SendButton from './SendButton.js'
 import Reviews from './Reviews.js'
-import NavbarButton from './NavbarButton';
 import Footer from './Footer';
 import SignOutButton from './SignOutButton'
 
