@@ -46,7 +46,7 @@ class Home extends React.Component {
             <Route path="/login" exact component={ login }/>
             <Route path="/register" exact component={ Register }/>
             <Route path="/reviews" exact component={ reviews }/>
-            <div class="flex-container">
+            <div className="flex-container">
               <FrontPageButton>Sign in</FrontPageButton> 
               <FrontPageButton>Sign up</FrontPageButton>
               <SendButton>send</SendButton>
