@@ -21,7 +21,7 @@ class Login extends React.Component {
   }
 
   handleSubmit(event) { //TODO LÄGGA IN SÅ VI KOLLAR I DB 
-    fetch('/api/user', {
+    var myObject = fetch('/api/auth', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
@@ -32,13 +32,16 @@ class Login extends React.Component {
             password: this.state.password
         })
     })
+
+    console.log(myObject);
+    event.preventDefault();
   }
 
   render() {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <input className="login" type="email" placeholder="Email" value={this.state.email} onChange={this.EmailClick.bind(this)} />
+          <input className="login" placeholder="Email" value={this.state.email} onChange={this.EmailClick.bind(this)} /> {/*TODO addtype="email"*/}
           <br></br>
           <input className="login" type="password" placeholder="Password" value={this.state.password} onChange={this.PwdClick.bind(this)} />
           <br></br>
