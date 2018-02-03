@@ -10,10 +10,14 @@ import '../Style/Button.css'
 
 class Portal extends React.Component {
 
+  componentWillMount() {
+    document.body.classList.add('portal');
+  }
+
   render() {
     return (
         <Router>
-          <div>
+          <div className="portal">
             <div className = "signOut">
             <Link to="/">
                 <SignOutButton> Sign Out </SignOutButton>

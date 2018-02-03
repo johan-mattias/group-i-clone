@@ -1,3 +1,8 @@
+body.home{
+  height: 100%;
+  background-color: #2F80ED;
+}
+
 .App {
   text-align: center;
 }
@@ -33,12 +38,16 @@ h1.logo {
   to { transform: rotate(360deg); }
 }
 
-.blueBackground{
-  background-color: #2F80ED;
-}
-
 .link{
   text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
 }
 
 .link.logo{

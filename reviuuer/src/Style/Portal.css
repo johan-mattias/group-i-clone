@@ -1,3 +1,8 @@
+body.portal{
+    height: 100%;
+    color: white;
+}
+
 .signOut{
     display: flex;
     justify-content: flex-end;
