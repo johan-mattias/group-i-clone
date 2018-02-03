@@ -8,7 +8,7 @@ class Reviews extends React.Component {
   }
 
   componentWillMount = () => {
-    fetch('/api/auth?username=admin&password=1234')
+    fetch('/api/auth?email=admin&password=1234')
       .then(
         (res) => { 
         if(res.status !== 200) {
