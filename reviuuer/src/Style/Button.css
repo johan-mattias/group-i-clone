@@ -32,8 +32,8 @@ button.nav{
       color:white;
       font-family: Roboto;
       font-size: 25px;
-      width: 125px;
       height: 69px;
+      flex-grow: 1;
    
 }
 

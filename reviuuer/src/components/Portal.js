@@ -15,10 +15,11 @@ class Portal extends React.Component {
     return (
         <Router>
           <div>
+            <div className = "signOut">
             <Link to="/">
                 <SignOutButton> Sign Out </SignOutButton>
             </Link>
-
+            </div>
             <Route path="/" exact component={ Home }/>
             <Footer/>
             <Route path="/reviews" exact component={ Reviews }/>

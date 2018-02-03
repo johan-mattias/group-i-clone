@@ -1,4 +1,11 @@
+.signOut{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: -25px;
+    margin-top: 24px;
+}
 .footer{
+    display: flex;
     position: fixed;
     bottom:0px;
     width:100%;
