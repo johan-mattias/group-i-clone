@@ -2,7 +2,6 @@ import React from 'react';
 import {ReactDOM, BrowserRouter as Router, Route, Link, push} from 'react-router-dom';
 import sendButton from './SendButton.js'
 import '../Style/Button.css';
-import splash from './Splash.js'
 
 
 class Login extends React.Component {

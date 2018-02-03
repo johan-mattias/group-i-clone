@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {ReactDOM, BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import FrontPageButton from './FrontPageButton.js'
-import frontButton from '../Style/frontButton.css'
 import SendButton from './SendButton.js'
 import Reviews from './Reviews.js'
 import Footer from './Footer';
