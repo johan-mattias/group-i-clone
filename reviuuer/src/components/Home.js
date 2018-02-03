@@ -11,8 +11,6 @@ import reviews from './Reviews.js'
 import addReview from './AddReviewPage'
 import Footer from './Footer';
 import SignOutButton from './SignOutButton'
-import link from '../Style/links.css'
-import blueBack from '../Style/backgrounds.css'
 
 
 class Home extends React.Component {
@@ -38,9 +36,8 @@ class Home extends React.Component {
   render() {
     return (
         <Router>
-          <div className="blueBackground">
-          <Route path="/"  exact component={ splash }/>
-          <div className="flex-container">
+          
+          <div className="flex-container blueBackground">
           <button className="home"><Link className="link" to="/register">Sign up</Link></button>
           <button className="home"><Link className="link" to="/login">Sign in</Link></button>
             <ul>
@@ -50,11 +47,11 @@ class Home extends React.Component {
               <li><Link to="/reviews">REVIEWS</Link></li>
               <li><Link to="/addreview">ADD REVIEWS</Link></li>
             </ul>
+            <h1>ReviUUer</h1>
             <Route path="/login" exact component={ login }/>
             <Route path="/register" exact component={ Register }/>
             <Route path="/reviews" exact component={ reviews }/>
             <Route path="/addreview" exact component={ addReview }/>
-          </div>
           </div>
         </Router>
     );

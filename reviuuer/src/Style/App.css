@@ -22,7 +22,22 @@
   font-size: large;
 }
 
+h1 {
+    font-family: Roboto;
+    color: #FFFFFF;
+    font-size: 48px;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.blueBackground{
+  background-color: #2F80ED;
+}
+
+.link{
+  text-decoration: none;
+}
+
