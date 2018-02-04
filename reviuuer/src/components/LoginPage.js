@@ -2,6 +2,7 @@ import React from 'react';
 import {ReactDOM, BrowserRouter as Router, Route, Link, push} from 'react-router-dom';
 import sendButton from './SendButton.js'
 import '../Style/Button.css';
+import '../Style/App.css';
 
 
 class Login extends React.Component {
@@ -54,14 +55,17 @@ class Login extends React.Component {
   render() {
     return (
       
-      <div>
+    <div className="flex-container">
+        <div class="row"> 
           <form onSubmit={this.handleSubmit}>
-          <input className="login" placeholder="Email" value={this.state.email} onChange={this.EmailClick.bind(this)} /> {/*TODO addtype="email"*/}
-          <br></br>
-          <input className="login" type="password" placeholder="Password" value={this.state.password} onChange={this.PwdClick.bind(this)} />
-          <br></br>
-          <input className="submit" type="submit" value="LOGIN" />
-        </form>
+            <input className="login" placeholder="Email" value={this.state.email} onChange={this.EmailClick.bind(this)} /> {/*TODO addtype="email"*/}
+            <br></br>
+            <input className="login" type="password" placeholder="Password" value={this.state.password} onChange={this.PwdClick.bind(this)} />
+            <br></br>
+            <input className="submit" type="submit" value="LOGIN" />
+            <br></br>
+          </form>
+        </div>
       </div>
     );
   };

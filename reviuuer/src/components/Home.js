@@ -18,16 +18,18 @@ class Home extends React.Component {
     return (
         <Router>
           <div className="flex-container home">
-            <h1><Link className="link logo" to="/">ReviUUer</Link></h1>
-              {/*<ul>
-                <li><Link to="/reviews">REVIEWS</Link></li>
-                <li><Link to="/addreview">ADD REVIEWS</Link></li>
-              </ul>*/}
-              <Route path="/" exact component={ splash }/>
-              <Route path="/login" exact component={ login }/>
-              <Route path="/register" exact component={ Register }/>
-              <Route path="/reviews" exact component={ reviews }/>
-              <Route path="/addreview" exact component={ addReview }/>
+            <div class="row"> 
+              <div><h1><Link className="link logo" to="/">ReviUUer</Link></h1></div>
+                {/*<ul>
+                  <li><Link to="/reviews">REVIEWS</Link></li>
+                  <li><Link to="/addreview">ADD REVIEWS</Link></li>
+                </ul>*/}
+                <Route path="/" exact component={ splash }/>
+                <Route path="/login" exact component={ login }/>
+                <Route path="/register" exact component={ Register }/>
+                <Route path="/reviews" exact component={ reviews }/>
+                <Route path="/addreview" exact component={ addReview }/>
+            </div>
           </div>
         </Router>
     );

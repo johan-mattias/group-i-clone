@@ -27,10 +27,11 @@ body.home{
   font-size: large;
 }
 
-h1.logo {
+h1 {
     font-family: Roboto;
     color: #FFFFFF;
     font-size: 48px;
+    text-align: center; 
 }
 
 @keyframes App-logo-spin {
@@ -54,6 +55,22 @@ a:hover {
   font-family: Roboto;
   color: #FFFFFF;
   font-size: 48px;
+}
+
+.flex-container {
+    padding: 0;
+    margin: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.row {
+    width: auto;
 }
 
 

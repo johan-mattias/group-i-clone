@@ -8,6 +8,7 @@ const FrontPageButton = () =>{
   return (
     <div>
         <button className="home"><Link className="link" to="/register">REGISTER</Link></button>
+        <br></br>
         <button className="home"><Link className="link" to="/login">LOGIN</Link></button>
     </div>
   )
