@@ -1,7 +1,9 @@
 import React from 'react';
-import {ReactDOM, BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import {ReactDOM, BrowserRouter as Router, Route, Link, push} from 'react-router-dom';
 import sendButton from './SendButton.js'
 import '../Style/Button.css';
+import '../Style/App.css';
+
 
 class Login extends React.Component {
   constructor(props) {
@@ -20,33 +22,50 @@ class Login extends React.Component {
     this.setState({password: event.target.value});
   }
 
-  handleSubmit(event) { //TODO LÄGGA IN SÅ VI KOLLAR I DB 
-    var myObject = fetch('/api/auth', {
-        method: 'GET',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            username: this.state.email,
-            password: this.state.password
-        })
-    })
-
-    console.log(myObject);
+  handleSubmit(event) {
     event.preventDefault();
+    var email = this.state.email
+    var pwd = this.state.password
+    var fetchURL = `/api/auth?email=${email}&password=${pwd}`;
+    fetch( fetchURL )
+      .then(
+        (res) => { 
+        if(res.status !== 200) {
+          console.log('Looks like there was a problem. Status Code: ' +
+            res.status);
+          return;
+        }
+        res.json()
+          .then((json) => { 
+            const access = json.access
+            if (access === true) {
+              console.log("Push , correct password")
+
+              // this.props.push('/portal');
+             }
+            else {
+              console.log("Wrong username or password")
+            }
+            console.log(access)
+            // this.setState({access})
+          })
+        })
   }
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <input className="login" placeholder="Email" value={this.state.email} onChange={this.EmailClick.bind(this)} /> {/*TODO addtype="email"*/}
-          <br></br>
-          <input className="login" type="password" placeholder="Password" value={this.state.password} onChange={this.PwdClick.bind(this)} />
-          <br></br>
-          <input className="submit" type="submit" value="LOGIN" />
-        </form>
+      
+    <div className="flex-container">
+        <div class="row"> 
+          <form onSubmit={this.handleSubmit}>
+            <input className="login" placeholder="Email" value={this.state.email} onChange={this.EmailClick.bind(this)} /> {/*TODO addtype="email"*/}
+            <br></br>
+            <input className="login" type="password" placeholder="Password" value={this.state.password} onChange={this.PwdClick.bind(this)} />
+            <br></br>
+            <input className="submit" type="submit" value="LOGIN" />
+            <br></br>
+          </form>
+        </div>
       </div>
     );
   };

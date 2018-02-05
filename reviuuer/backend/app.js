@@ -7,7 +7,8 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
-var reviews = require('./routes/reviews');
+var getReviews = require('./routes/getReviews');
+var addReview = require('./routes/addReview');
 var auth = require('./routes/auth');
 var reg = require('./routes/reg');
 
@@ -27,7 +28,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api', index);
 app.use('/api/users', users);
-app.use('/api/reviews', reviews);
+app.use('/api/reviews', getReviews);
+app.use('/api/addreview', addReview);
 app.use('/api/auth', auth);
 app.use('/api/reg', reg);
 
