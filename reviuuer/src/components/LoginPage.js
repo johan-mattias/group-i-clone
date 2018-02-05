@@ -53,10 +53,7 @@ class Login extends React.Component {
                 const date = new Date();
                 const days = 30
                 date.setDate(date.getDate() + parseInt(days));
-                console.log(date);
-
                 cookies.set('myCat', 'Pacman', {path: '/', expires: date} );
-                console.log(cookies.get('myCat'));
                 console.log("Push , correct password");
 
               // this.props.push('/portal');
