@@ -1,5 +1,6 @@
 import React from 'react';
 import {ReactDOM, BrowserRouter as Router, Route, Link, push} from 'react-router-dom';
+import Cookies from "universal-cookie";
 import 'typeface-roboto';
 import sendButton from './SendButton.js'
 import '../Style/Button.css';
@@ -10,9 +11,16 @@ class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = {email: '',
-                  password: ''};
+                  password: '',
+                  name: '',
+                  cookies: '',
+                };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+ 
+  componentWillMount() {
+    const { cookies } = this.props;
   }
 
   EmailClick(event) {
@@ -40,7 +48,12 @@ class Login extends React.Component {
           .then((json) => { 
             const access = json.access
             if (access === true) {
-              console.log("Push , correct password")
+                const cookies = new Cookies();
+                var d = new Date();
+                var n = d.getTime() + 100000*1000*60;
+                cookies.set('myCat', 'Pacman', {path: '/'}, );
+                console.log(cookies.get('myCat'));
+                console.log("Push , correct password");
 
               // this.props.push('/portal');
              }

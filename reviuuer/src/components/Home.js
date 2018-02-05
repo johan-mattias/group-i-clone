@@ -22,7 +22,7 @@ class Home extends React.Component {
             <div><h1><Link className="link logo" to="/">ReviUUer</Link></h1></div>
               <hr></hr>
               <div className="flex-container home">
-                <div class="row"> 
+                <div className="row"> 
                   {/*<ul>
                     <li><Link to="/reviews">REVIEWS</Link></li>
                     <li><Link to="/addreview">ADD REVIEWS</Link></li>
