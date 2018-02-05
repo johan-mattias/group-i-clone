@@ -49,9 +49,13 @@ class Login extends React.Component {
             const access = json.access
             if (access === true) {
                 const cookies = new Cookies();
-                var d = new Date();
-                var n = d.getTime() + 100000*1000*60;
-                cookies.set('myCat', 'Pacman', {path: '/'}, );
+
+                const date = new Date();
+                const days = 30
+                date.setDate(date.getDate() + parseInt(days));
+                console.log(date);
+
+                cookies.set('myCat', 'Pacman', {path: '/', expires: date} );
                 console.log(cookies.get('myCat'));
                 console.log("Push , correct password");
 
