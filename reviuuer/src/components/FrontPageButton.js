@@ -7,9 +7,9 @@ import '../Style/App.css';
 const FrontPageButton = () =>{
   return (
     <div>
-        <button className="home"><Link className="link" to="/register">REGISTER</Link></button>
+        <Link className="link" to="/register"><button className="home">REGISTER</button></Link>
         <br></br>
-        <button className="home"><Link className="link" to="/login">LOGIN</Link></button>
+        <Link className="link" to="/login"><button className="home">LOGIN</button></Link>
     </div>
   )
 };
