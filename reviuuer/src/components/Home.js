@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import 'typeface-roboto';
 import {ReactDOM, BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import '../Style/App.css';
 import login from './LoginPage.js';
@@ -17,20 +18,23 @@ class Home extends React.Component {
   render() {
     return (
         <Router>
-          <div className="flex-container home">
-            <div class="row"> 
-              <div><h1><Link className="link logo" to="/">ReviUUer</Link></h1></div>
-                {/*<ul>
-                  <li><Link to="/reviews">REVIEWS</Link></li>
-                  <li><Link to="/addreview">ADD REVIEWS</Link></li>
-                </ul>*/}
-                <Route path="/" exact component={ splash }/>
-                <Route path="/login" exact component={ login }/>
-                <Route path="/register" exact component={ Register }/>
-                <Route path="/reviews" exact component={ reviews }/>
-                <Route path="/addreview" exact component={ addReview }/>
+          <div>
+            <div><h1><Link className="link logo" to="/">ReviUUer</Link></h1></div>
+              <hr></hr>
+              <div className="flex-container home">
+                <div class="row"> 
+                  {/*<ul>
+                    <li><Link to="/reviews">REVIEWS</Link></li>
+                    <li><Link to="/addreview">ADD REVIEWS</Link></li>
+                  </ul>*/}
+                  <Route path="/" exact component={ splash }/>
+                  <Route path="/login" exact component={ login }/>
+                  <Route path="/register" exact component={ Register }/>
+                  <Route path="/reviews" exact component={ reviews }/>
+                  <Route path="/addreview" exact component={ addReview }/>
+              </div>
             </div>
-          </div>
+          </div>          
         </Router>
     );
   };

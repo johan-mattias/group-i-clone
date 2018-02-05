@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../Style/Button.css';
+import 'typeface-roboto';
 
 class Register extends Component {
   constructor(props) {

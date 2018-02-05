@@ -7,6 +7,7 @@ import Footer from './Footer';
 import SignOutButton from './SignOutButton'
 import Home from './Home.js'
 import '../Style/Button.css'
+import 'typeface-roboto';
 
 class Portal extends React.Component {
 

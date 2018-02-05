@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './Style/App.css';
+import 'typeface-roboto';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
