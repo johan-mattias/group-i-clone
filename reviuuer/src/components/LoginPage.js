@@ -56,17 +56,12 @@ class Login extends React.Component {
     return (
       
     <div className="flex-container">
-        <div class="row"> 
-          <form onSubmit={this.handleSubmit}>
+          <form className="login-column" onSubmit={this.handleSubmit}>
             <input className="login" placeholder="Email" value={this.state.email} onChange={this.EmailClick.bind(this)} /> {/*TODO addtype="email"*/}
-            <br></br>
             <input className="login" type="password" placeholder="Password" value={this.state.password} onChange={this.PwdClick.bind(this)} />
-            <br></br>
             <input className="submit" type="submit" value="LOGIN" />
-            <br></br>
           </form>
         </div>
-      </div>
     );
   };
 }

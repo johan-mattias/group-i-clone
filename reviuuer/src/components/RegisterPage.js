@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import '../Style/Button.css';
 
-
-
 class Register extends Component {
   constructor(props) {
     super(props);
     this.state = {email: '',
                   password: '',
-                  passwordVerify:'',};
+                  passwordVerify:'',
+                  message: '',
+                  cookie: '',
+                };
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -56,13 +57,10 @@ class Register extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <form className="login-column" onSubmit={this.handleSubmit}>
           <input className="login" placeholder="Email" value={this.state.email} onChange={this.EmailClick.bind(this)} /> {/*TODO add type="email"*/}
-          <br></br>
           <input className="login" type="password" placeholder="Password" value={this.state.password} onChange={this.PwdClick.bind(this)} />
-          <br></br>
           <input className="login" type="password" placeholder="Password" value={this.state.passwordVerify} onChange={this.PwdClickCheck.bind(this)} />
-          <br></br>
           <input className="submit" type="submit" value="REGISTER" />
         </form>
       </div>
