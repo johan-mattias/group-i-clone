@@ -33,8 +33,10 @@ class Login extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    var email = this.state.email
-    var pwd = this.state.password
+    // var email = this.state.email 
+    // var pwd = this.state.password
+    var email = 'abc123' // TODO remove this later 
+    var pwd = 'abc123'  // TODO remove this later 
     var fetchURL = `/api/auth?email=${email}&password=${pwd}`;
     fetch( fetchURL )
       .then(
@@ -47,13 +49,15 @@ class Login extends React.Component {
         res.json()
           .then((json) => { 
             const access = json.access
+            const token = json.token
+            console.log(access)
+            console.log(token)
             if (access === true) {
                 const cookies = new Cookies();
-
                 const date = new Date();
                 const days = 30
                 date.setDate(date.getDate() + parseInt(days));
-                cookies.set('myCat', 'Pacman', {path: '/', expires: date} );
+                cookies.set('user', token, {path: '/', expires: date} );
                 console.log("Push , correct password");
 
               // this.props.push('/portal');

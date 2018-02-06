@@ -49,7 +49,8 @@ router.get('/', function(req, res) {
       authenticateUser(email, password, (error, access) => {
         if (access) {
             console.log('Authenticated')
-            res.json({access: true});
+            res.json({access: true, 
+                      token: true}); //TODO GENERATE TOKEN FOR COOKIE
         } else {
             console.log('Not authenticated')
             res.json({access: false});
