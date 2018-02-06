@@ -60,7 +60,7 @@ class Login extends React.Component {
                 cookies.set('user', token, {path: '/', expires: date} );
                 console.log("Push , correct password");
 
-              // this.props.push('/portal');
+              // this.props.push('/portal'); // Push user to portal here
              }
             else {
               console.log("Wrong username or password")

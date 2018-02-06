@@ -37,7 +37,8 @@ router.post('/', function(req, res) {
         registerUser(email, hash, (error, added) => {
           if(added) {
               console.log('New user added')
-              res.json({added: true});
+              res.json({added: true,
+                        token: true}); //TODO set the real cookie 
           } 
         });
       }); 

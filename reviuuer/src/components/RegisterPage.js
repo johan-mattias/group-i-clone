@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Cookies from "universal-cookie";
 import '../Style/Button.css';
 import 'typeface-roboto';
 
@@ -52,8 +53,32 @@ class Register extends Component {
               password: this.state.password
           })
       })
-    }
+      .then(
+        (res) => { 
+        if(res.status !== 200) {
+          console.log('Looks like there was a problem. Status Code: ' +
+            res.status);
+          return;
+        }
+        res.json()
+          .then((json) => { 
+            const added = json.added
+            const token = json.token
+            console.log(added)
+            console.log(token)
+            if (added === true) {
+                const cookies = new Cookies();
+                const date = new Date();
+                const days = 30
+                date.setDate(date.getDate() + parseInt(days));
+                cookies.set('user', token, {path: '/', expires: date} );
+                console.log("Push , correct added"); //TODO push user to portal here 
+              }
+            })
+        })
+      }
   }
+        
 
   render() {
     return (
