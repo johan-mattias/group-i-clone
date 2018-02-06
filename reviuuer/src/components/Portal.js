@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {ReactDOM, BrowserRouter as Router, Route, Link} from 'react-router-dom';
-import FrontPageButton from './FrontPageButton.js'
-import SendButton from './SendButton.js'
+import Cookies from "universal-cookie";
+import {withRouter} from "react-router-dom";
 import Reviews from './Reviews.js'
 import Footer from './Footer';
 import SignOutButton from './SignOutButton'
@@ -10,9 +10,37 @@ import '../Style/Button.css'
 import 'typeface-roboto';
 
 class Portal extends React.Component {
+    constructor(props) {
+    super(props);
+    }
 
   componentWillMount() {
-    document.body.classList.add('portal');
+    const c = new Cookies();
+    var cookieFromUser = c.get('user')
+    var fetchURL = `/api/auth?cookie=${cookieFromUser}`;
+    fetch( fetchURL )
+    .then(
+        (res) => { 
+        if(res.status !== 200) {
+          console.log('Looks like there was a problem. Status Code: ' +
+            res.status);
+          return;
+        }
+      res.json()
+          .then((json) => { 
+            const access = json.accessCookie
+            console.log(access)
+            if (access === true) {
+               console.log("correct cookie ")
+             }
+            else {
+              console.log("Wrong cookie ")
+              // this.props.push('/'); // Push user back to splash here
+            }
+          })
+        })
+
+    document.body.classList.add('portal'); //adding the correct background by setting the class of the body
   }
 
   render() {
@@ -27,11 +55,10 @@ class Portal extends React.Component {
             <Route path="/" exact component={ Home }/>
             <Footer/>
             <Route path="/reviews" exact component={ Reviews }/>
-              {/*<SendButton>send</SendButton>*/}
             </div>
         </Router>
     );
   };
 }
 
-export default Portal;
+export default withRouter(Portal);
