@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import 'typeface-roboto';
 import {ReactDOM, BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import {withRouter} from "react-router-dom";
+import Cookies from "universal-cookie";
 import '../Style/App.css';
 import login from './LoginPage.js';
 import Register from './RegisterPage';
@@ -10,8 +12,12 @@ import splash from './FrontPageButton';
 
 
 class Home extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
   componentWillMount() {
+
     document.body.classList.add('home');
   }
 
@@ -23,10 +29,6 @@ class Home extends React.Component {
               <hr></hr>
               <div className="flex-container home">
                 <div className="row"> 
-                  {/*<ul>
-                    <li><Link to="/reviews">REVIEWS</Link></li>
-                    <li><Link to="/addreview">ADD REVIEWS</Link></li>
-                  </ul>*/}
                   <Route path="/" exact component={ splash }/>
                   <Route path="/login" exact component={ login }/>
                   <Route path="/register" exact component={ Register }/>
@@ -40,4 +42,4 @@ class Home extends React.Component {
   };
 }
 
-export default Home;
+export default withRouter(Home);

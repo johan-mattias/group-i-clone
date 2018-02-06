@@ -1,8 +1,8 @@
 import React from 'react';
-import {ReactDOM, BrowserRouter as Router, Route, Link, push} from 'react-router-dom';
+import {ReactDOM, BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import Cookies from "universal-cookie";
+import {withRouter} from "react-router-dom";
 import 'typeface-roboto';
-import sendButton from './SendButton.js'
 import '../Style/Button.css';
 import '../Style/App.css';
 
@@ -59,6 +59,7 @@ class Login extends React.Component {
                 date.setDate(date.getDate() + parseInt(days));
                 cookies.set('user', token, {path: '/', expires: date} );
                 console.log("Push , correct password");
+                this.props.history.push('portal');
 
               // this.props.push('/portal'); // Push user to portal here
              }
@@ -85,4 +86,4 @@ class Login extends React.Component {
 }
 
 
-export default Login;
+export default withRouter(Login);
