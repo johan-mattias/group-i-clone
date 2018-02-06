@@ -65,9 +65,7 @@ CREATE TABLE reviuuer.likeAndDislike (
 	comment_id int,
   	like_type ENUM('like', 'dislike'),
 	PRIMARY KEY (id),
-	FOREIGN KEY (user_id) REFERENCES reviuuer.user(id),
-	FOREIGN KEY (review_id) REFERENCES reviuuer.review(id),
-	FOREIGN KEY (comment_id) REFERENCES reviuuer.comment(id)
+	FOREIGN KEY (user_id) REFERENCES reviuuer.user(id)
 );
 
 CREATE TABLE reviuuer.period (
@@ -105,11 +103,13 @@ CREATE TABLE reviuuer.courseAndProgram (
 	FOREIGN KEY (program_id) REFERENCES reviuuer.program(id)
 );
 
-
-
--- Mock data
 USE reviuuer;
 
+-- Add indexes
+CREATE INDEX review_id_index ON likeAndDislike (review_id) USING HASH;
+CREATE INDEX comment_id_index ON likeAndDislike (comment_id) USING HASH;
+
+-- Mock data
 -- user
 insert into user (id, email, password) values (1, 'admin', '1234');
 insert into user (id, email, password) values (2, 'lgodden1', 'yRZaCdPo');
