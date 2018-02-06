@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import 'typeface-roboto';
 import {ReactDOM, BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import {withRouter} from "react-router-dom";
+import Cookies from "universal-cookie";
 import '../Style/App.css';
 import login from './LoginPage.js';
 import Register from './RegisterPage';
@@ -9,31 +12,34 @@ import splash from './FrontPageButton';
 
 
 class Home extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
   componentWillMount() {
+
     document.body.classList.add('home');
   }
 
   render() {
     return (
         <Router>
-          <div className="flex-container home">
-            <div class="row"> 
-              <div><h1><Link className="link logo" to="/">ReviUUer</Link></h1></div>
-                {/*<ul>
-                  <li><Link to="/reviews">REVIEWS</Link></li>
-                  <li><Link to="/addreview">ADD REVIEWS</Link></li>
-                </ul>*/}
-                <Route path="/" exact component={ splash }/>
-                <Route path="/login" exact component={ login }/>
-                <Route path="/register" exact component={ Register }/>
-                <Route path="/reviews" exact component={ reviews }/>
-                <Route path="/addreview" exact component={ addReview }/>
+          <div>
+            <div><h1><Link className="link logo" to="/">ReviUUer</Link></h1></div>
+              <hr></hr>
+              <div className="flex-container home">
+                <div className="row"> 
+                  <Route path="/" exact component={ splash }/>
+                  <Route path="/login" exact component={ login }/>
+                  <Route path="/register" exact component={ Register }/>
+                  <Route path="/reviews" exact component={ reviews }/>
+                  <Route path="/addreview" exact component={ addReview }/>
+              </div>
             </div>
-          </div>
+          </div>          
         </Router>
     );
   };
 }
 
-export default Home;
+export default withRouter(Home);

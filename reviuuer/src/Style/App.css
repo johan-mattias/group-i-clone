@@ -30,8 +30,16 @@ body.home{
 h1 {
     font-family: Roboto;
     color: #FFFFFF;
-    font-size: 48px;
     text-align: center; 
+    font-weight: lighter;
+}
+
+h2 {
+    font-family: Roboto;
+    color: #FFFFFF;
+    font-size: 30px;
+    text-align: center;
+    font-weight: lighter;
 }
 
 @keyframes App-logo-spin {
@@ -54,7 +62,7 @@ a:hover {
 .link.logo{
   font-family: Roboto;
   color: #FFFFFF;
-  font-size: 48px;
+  font-size: 55px;
 }
 
 .flex-container {
@@ -64,9 +72,13 @@ a:hover {
 }
 
 .login-column {
-     display: flex;
-     flex-wrap: wrap;
-     flex-direction: column; 
-     align-items: center;
+    padding-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column; 
+    align-items: center;
 }
 
+hr {
+  width: 80%;
+}

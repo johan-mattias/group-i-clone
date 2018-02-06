@@ -1,6 +1,8 @@
 import React from 'react';
-import {ReactDOM, BrowserRouter as Router, Route, Link, push} from 'react-router-dom';
-import sendButton from './SendButton.js'
+import {ReactDOM, BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import Cookies from "universal-cookie";
+import {withRouter} from "react-router-dom";
+import 'typeface-roboto';
 import '../Style/Button.css';
 import '../Style/App.css';
 
@@ -9,9 +11,16 @@ class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = {email: '',
-                  password: ''};
+                  password: '',
+                  name: '',
+                  cookies: '',
+                };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+ 
+  componentWillMount() {
+    const { cookies } = this.props;
   }
 
   EmailClick(event) {
@@ -24,8 +33,10 @@ class Login extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    var email = this.state.email
-    var pwd = this.state.password
+    // var email = this.state.email 
+    // var pwd = this.state.password
+    var email = 'abc123' // TODO remove this later 
+    var pwd = 'abc123'  // TODO remove this later 
     var fetchURL = `/api/auth?email=${email}&password=${pwd}`;
     fetch( fetchURL )
       .then(
@@ -38,33 +49,41 @@ class Login extends React.Component {
         res.json()
           .then((json) => { 
             const access = json.access
+            const token = json.token
+            console.log(access)
+            console.log(token)
             if (access === true) {
-              console.log("Push , correct password")
+                const cookies = new Cookies();
+                const date = new Date();
+                const days = 30
+                date.setDate(date.getDate() + parseInt(days));
+                cookies.set('user', token, {path: '/', expires: date} );
+                console.log("Push , correct password");
+                this.props.history.push('portal');
 
-              // this.props.push('/portal');
+              // this.props.push('/portal'); // Push user to portal here
              }
             else {
               console.log("Wrong username or password")
             }
-            console.log(access)
-            // this.setState({access})
           })
         })
   }
 
   render() {
     return (
-      
-    <div className="flex-container">
+    <div>
+        <div className="flex-container">
           <form className="login-column" onSubmit={this.handleSubmit}>
             <input className="login" placeholder="Email" value={this.state.email} onChange={this.EmailClick.bind(this)} /> {/*TODO addtype="email"*/}
             <input className="login" type="password" placeholder="Password" value={this.state.password} onChange={this.PwdClick.bind(this)} />
             <input className="submit" type="submit" value="LOGIN" />
           </form>
         </div>
+    </div>
     );
   };
 }
 
 
-export default Login;
+export default withRouter(Login);

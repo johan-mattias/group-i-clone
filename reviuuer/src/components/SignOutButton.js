@@ -11,6 +11,7 @@ const SignOutButton = ({ onClick, children, changeStyle}) => {
         borderRadius: '45px 0 0 45px',
         borderRight: 'none'
         
+
     }
 
     return (
