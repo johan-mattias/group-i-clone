@@ -13,6 +13,7 @@ var auth = require('./routes/auth');
 var reg = require('./routes/reg');
 var like = require('./routes/like');
 var dislike = require('./routes/dislike');
+var addComment = require('./routes/addComment');
 
 var app = express();
 
@@ -36,6 +37,7 @@ app.use('/api/auth', auth);
 app.use('/api/reg', reg);
 app.use('/api/like', like);
 app.use('/api/dislike', dislike);
+app.use('/api/addcomment', addComment);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
