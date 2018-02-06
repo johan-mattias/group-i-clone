@@ -40,12 +40,31 @@ const authenticateUser = (email, myPlaintextPassword, cb) => {
   });
 }
 
+//TODO validate cookie here
+const authenticateCookie = (cookie, cb) => { 
+    console.log(cookie);
+    if (cookie) {
+      if (cookie === 'true') {
+        console.log("True callback i funktion")
+        cb( true ); 
+        return;
+      }
+    }
+
+    console.log("False callback i funktion")
+    cb( false );
+    return;
+
+}
+
+
 /* GET home page. */
 router.get('/', function(req, res) {
     var email = req.param('email') ? req.param('email') : undefined;
     var password = req.param('password') ? req.param('password') : undefined;
+    var cookie = req.param('cookie') ? req.param('cookie') : undefined;
 
-    if(email !== undefined && password !== undefined) {
+    if(email !== undefined && password !== undefined) { // loggar in
       authenticateUser(email, password, (error, access) => {
         if (access) {
             console.log('Authenticated')
@@ -56,10 +75,22 @@ router.get('/', function(req, res) {
             res.json({access: false});
         } 
       });
-    } else {
-      console.log('Authentication failed')
-      res.json({access: false});
+      
+    } else { // redan inloggad
+      authenticateCookie(cookie, (accessCookie) => {
+        if(accessCookie === true){
+            console.log('Authenticated')
+            res.json({accessCookie: true });
+        } else {
+            console.log('Not authenticated')
+            res.json({accessCookie: false});
+        } 
+      });
     }
+    // else {
+    //   console.log('Authentication failed')
+    //   res.json({access: false});
+    // }
   });
 
 module.exports = router;
