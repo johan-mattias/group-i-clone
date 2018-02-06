@@ -1,10 +1,18 @@
 var express = require('express');
 var router = express.Router();
+app = express();
 var mysql = require('mysql');
 var mysqlConf = require('../config.js').mysql_pool;
 
 var bcrypt = require('bcrypt');
 const saltRounds = 10;
+
+session = require('express-session');
+app.use(session({
+    secret: '2C44-4D44-WppQ38S',
+    resave: true,
+    saveUninitialized: true
+}));
 
 const authenticateUser = (email, myPlaintextPassword, cb) => {
   mysqlConf.getConnection(function (err, connection) {
@@ -24,8 +32,8 @@ const authenticateUser = (email, myPlaintextPassword, cb) => {
         return;
       } 
       else{
-        console.log('Authentication declined'); //TODO BUG den retunerar aldrig false till frontend
-        cb(error, false); // TODO oklart om den retunerar någon gång 
+        console.log('Authentication declined');
+        cb(error, false);
         return;
       }
     });
@@ -43,8 +51,8 @@ router.get('/', function(req, res) {
             console.log('Authenticated')
             res.json({access: true});
         } else {
-            console.log('Not authenticated') // TODO Printas aldrig 
-            res.json({access: false}); // TODO oklart om den retuneras 
+            console.log('Not authenticated')
+            res.json({access: false});
         } 
       });
     } else {
