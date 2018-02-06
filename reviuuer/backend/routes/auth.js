@@ -74,9 +74,8 @@ router.get('/', function(req, res) {
             console.log('Not authenticated')
             res.json({access: false});
         } 
-      });
-      
-    } else { // redan inloggad
+      }); 
+    } else if (cookie !== undefined) { // redan inloggad
       authenticateCookie(cookie, (accessCookie) => {
         if(accessCookie === true){
             console.log('Authenticated')
@@ -86,11 +85,10 @@ router.get('/', function(req, res) {
             res.json({accessCookie: false});
         } 
       });
+    } else {
+      console.log('Authentication failed')
+      res.json({access: false});
     }
-    // else {
-    //   console.log('Authentication failed')
-    //   res.json({access: false});
-    // }
   });
 
 module.exports = router;
