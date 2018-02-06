@@ -6,7 +6,6 @@ body.portal{
 .signOut{
     display: flex;
     justify-content: flex-end;
-    margin-right: -25px;
     margin-top: 24px;
 }
 .footer{
