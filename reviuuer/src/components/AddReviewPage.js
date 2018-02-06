@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
+import Select from 'react-select';
 import '../Style/Button.css';
+import '../Style/App.css';
 
 class AddReview extends Component {
   constructor(props) {
     super(props);
     this.state = {
                 user_id: '1',
-                course_id: '1',
+                course_id: '',
                 teacher_id: '1',
                 quality: '',
                 difficulty: '',
@@ -21,7 +23,11 @@ class AddReview extends Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-
+  
+  handleChange = (selectedOption) => {
+    this.setState({ selectedOption });
+    console.log(`Selected: ${selectedOption.label}`);
+  }
   handleSubmit(event) {
     console.log(this.state);
     fetch('/api/addreview', {
@@ -39,9 +45,25 @@ class AddReview extends Component {
   }
 
   render() {
+    const user_id = this.state.user_id && this.state.user_id;
+
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <form className="form" onSubmit={this.handleSubmit}>
+          <input className="login" placeholder="course_id" value={this.state.course_id} onChange={(event) => this.setState({course_id: event.target.value})} /><br/>
+          
+          <Select
+            name="user_id"
+            value={user_id}
+            onChange={this.handleChange}
+            options={[
+              { value: '1', label: '1' },
+              { value: '2', label: '2' },
+              { value: '3', label: '3' },
+              { value: '4', label: '4' },
+              { value: '5', label: '5' },
+            ]}
+          />
           <input className="login" placeholder="quality" value={this.state.quality} onChange={(event) => this.setState({quality: event.target.value})} /><br/>
           <input className="login" placeholder="difficulty" value={this.state.difficulty} onChange={(event) => this.setState({difficulty: event.target.value})} /><br/>
           <input className="login" placeholder="can_recommend" value={this.state.can_recommend} onChange={(event) => this.setState({can_recommend: event.target.value})} /><br/>
@@ -52,7 +74,7 @@ class AddReview extends Component {
           <input className="login" placeholder="course_review" value={this.state.course_review} onChange={(event) => this.setState({course_review: event.target.value})} /><br/>
           <input className="login" placeholder="teacher_review" value={this.state.teacher_review} onChange={(event) => this.setState({teacher_review: event.target.value})} /><br/>
 
-          <input className="submit" type="submit" value="LOGIN" />
+          <input className="submit" type="submit" value="SUBMIT" />
         </form>
       </div>
     );
