@@ -65,8 +65,6 @@ class Login extends React.Component {
             else {
               console.log("Wrong username or password")
             }
-            console.log(access)
-            // this.setState({access})
           })
         })
   }
