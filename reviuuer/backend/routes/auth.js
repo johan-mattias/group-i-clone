@@ -25,18 +25,17 @@ const authenticateUser = (email, myPlaintextPassword, cb) => {
 
       if(error) console.error(error);
   
-      if (results.lenght > 0){
+      if(results.length){
         var bcryptAuth = bcrypt.compareSync(myPlaintextPassword, results[0].password);
         if(bcryptAuth) {
           console.log('Authentication accepted');
           cb(error, true);
           return;
         } 
-      } else {
-        console.log('Authentication declined');
-        cb(error, false);
-        return;
-      }
+      } 
+      console.log('Authentication declined');
+      cb(error, false);
+      return;
     });
   });
 }
