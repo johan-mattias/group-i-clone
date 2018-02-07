@@ -43,12 +43,14 @@ button.nav{
       font-size: 25px;
       height: 69px;
       flex-grow: 1;
+      width: 100%;
    
 }
 
-button.nav:focus {
+.selected button.nav {
       background-color: #3B5E8F;
-  }   
+}
+ 
 
 button.home {
       margin-bottom: 15px;
@@ -63,3 +65,8 @@ button.home {
 
 }
 
+
+
+.navLink {
+      flex-grow: 1;
+}

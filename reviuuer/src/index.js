@@ -24,8 +24,8 @@ render() {
         <Router>
             <div>
                 <Switch>
+                    <Route path="/portal" component={ Portal }/>
                     <Route exact path='/' component={ Home }/>
-                    <Route exact path="/portal" component={ Portal }/>
                 </Switch>
             </div>
         </Router>

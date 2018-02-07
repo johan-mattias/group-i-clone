@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {NavLink} from 'react-router-dom';
 import {ReactDOM, BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import Cookies from "universal-cookie";
 import {withRouter} from "react-router-dom";
@@ -44,6 +45,7 @@ class Portal extends React.Component {
   }
 
   render() {
+    console.log(this.props)
     return (
         <Router>
           <div className="portal">
@@ -53,6 +55,10 @@ class Portal extends React.Component {
             </Link>
             </div>
             <Route path="/" exact component={ Home }/>
+            <Route path="/portal/teacher" component={ ()=> {
+             return <p>Hello</p>
+            } }/>
+            {/* <Route path="/Course" component={ Course }/> */}
             <Footer/>
             <Route path="/reviews" exact component={ Reviews }/>
             </div>
