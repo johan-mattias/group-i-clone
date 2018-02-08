@@ -18,6 +18,7 @@ class Register extends Component {
   }
 
   componentWillMount() {
+    document.body.classList.remove('portal');
     document.body.classList.add('home');
   }
 
@@ -92,12 +93,16 @@ class Register extends Component {
       <div>
         <div><h1><Link className="link logo" to="/">ReviUUer</Link></h1></div>
         <hr/>
-        <form className="login-column" onSubmit={this.handleSubmit}>
-          <input className="login" placeholder="Email" value={this.state.email} onChange={this.EmailClick.bind(this)} /> {/*TODO add type="email"*/}
-          <input className="login" type="password" placeholder="Password" value={this.state.password} onChange={this.PwdClick.bind(this)} />
-          <input className="login" type="password" placeholder="Password" value={this.state.passwordVerify} onChange={this.PwdClickCheck.bind(this)} />
-          <input className="submit" type="submit" value="REGISTER" />
-        </form>
+        <div className="flex-container">
+          <div className="row"> 
+            <form className="login-column" onSubmit={this.handleSubmit}>
+              <input className="login" placeholder="Email" value={this.state.email} onChange={this.EmailClick.bind(this)} /> {/*TODO add type="email"*/}
+              <input className="login" type="password" placeholder="Password" value={this.state.password} onChange={this.PwdClick.bind(this)} />
+              <input className="login" type="password" placeholder="Password" value={this.state.passwordVerify} onChange={this.PwdClickCheck.bind(this)} />
+              <input className="submit" type="submit" value="REGISTER" />
+            </form>
+          </div>
+        </div>
       </div>
     );
   };

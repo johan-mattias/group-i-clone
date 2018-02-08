@@ -4,7 +4,6 @@ import Button from './Portal';
 import {withRouter} from "react-router-dom";
 import '../Style/App.css';
 import 'typeface-roboto';
-import FrontPageButton from './FrontPageButton';
 
 
 
@@ -14,6 +13,7 @@ class Splash extends React.Component {
   }
 
   componentWillMount() {
+    document.body.classList.remove('portal');
     document.body.classList.add('home');
   }
 
@@ -23,9 +23,17 @@ class Splash extends React.Component {
           <div><h1><Link className="link logo" to="/">ReviUUer</Link></h1></div>
           <hr></hr>
           <div>
-            < FrontPageButton /> 
+          <div className="flex-container">
+            <div className="row"> 
+              <div className="login-column">
+               <Link className="link" to="/register"><button className="home">REGISTER</button></Link>
+                 <br></br>
+                <Link className="link" to="/login"><button className="home">LOGIN</button></Link>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
 
     )
   }

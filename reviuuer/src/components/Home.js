@@ -4,35 +4,39 @@ import {ReactDOM, BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import {withRouter} from "react-router-dom";
 import Cookies from "universal-cookie";
 import '../Style/App.css';
-import login from './LoginPage.js';
+import Login from './LoginPage.js';
 import Register from './RegisterPage';
-import reviews from './Reviews.js';
-import addReview from './AddReviewPage';
-import splash from './Splash';
+import Reviews from './Reviews.js';
+import AddReview from './AddReviewPage';
+import Splash from './Splash';
 import Portal from './Portal';
 
 
 class Home extends React.Component {
   constructor(props) {
-    super(props);
-  }
+    super(props)
+        this.state = { componentShown: Splash,
+                      };
+    }
+
+    // handler() {
+    //   console.log("setting splash")
+    //   this.setState({componentShown: Splash});
+    // }
+
 
   render() {
     return (
-        <Router>
-          <div>
-            <div className="flex-container home">
-              <div className="row"> 
-                <Route path="/" exact component={ splash }/>
-                <Route path="/login" exact component={ login }/>
-                <Route path="/register" exact component={ Register }/>
-                <Route path="/portal" exact component={ Portal }/>
-                <Route path="/reviews" exact component={ reviews }/>
-                <Route path="/addreview" exact component={ addReview }/>
-              </div>
-            </div>
-          </div>
-        </Router>
+      <Router>
+        <div>
+            <Route path="/" exact component={ this.state.componentShown }/>
+            <Route path="/portal" exact component={ Portal }/>
+            <Route path="/login" exact component={ Login }/>
+            <Route path="/register" exact component={ Register }/>
+            <Route path="/reviews" exact component={ Reviews }/>
+            <Route path="/addreview" exact component={ AddReview }/>
+          </div>   
+      </Router>
     );
   };
 }

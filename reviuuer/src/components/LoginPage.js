@@ -21,6 +21,7 @@ class Login extends React.Component {
  
   componentWillMount() {
     const { cookies } = this.props;
+    document.body.classList.remove('portal');
     document.body.classList.add('home');
   }
 

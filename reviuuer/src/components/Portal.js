@@ -45,34 +45,31 @@ class Portal extends React.Component {
           })
         })
 
+    document.body.classList.remove('home');
     document.body.classList.add('portal'); //adding the correct background by setting the class of the body
   }
 
   render() {
     return (
-      <div className="portalContainer">
-        <div>
-          <div className = "header">
-            <h1>Home</h1> 
+      <Router>
+        <div className="portal">
+          <div className = 'header'>
+            <Link className="link logo" to="/"><h1>Home</h1></Link> 
             <div className = "signOut">
-              <Link className="link" to="/">
-                  <SignOutButton>Sign Out</SignOutButton>
+              <Link to="/">
+                  <SignOutButton> Sign Out </SignOutButton>
               </Link>
             </div>
           </div>
-          <div className="blueStripe" />
-          
-          <Router>
-            <div>
-              <Route path="/" exact component={ Home }/>
-              <Route path="/Portal/Course" component={ Course }/>
-              <Route path="/Portal/Teacher" component={Teacher}/> 
-              <Footer/>
-              <Route path="/reviews" exact component={ Reviews }/>
-            </div>
-          </Router>
+          <div className="blueStripe">
+          </div>
+          <Route path="/" exact component={ Home }/>
+          <Route path="/Portal/Course" component={ Course }/>
+          <Route path="/Portal/Teacher" component={Teacher}/> 
+          <Footer/>
+          <Route path="/reviews" exact component={ Reviews }/>
         </div>
-      </div>
+      </Router>
     );
   };
 }
