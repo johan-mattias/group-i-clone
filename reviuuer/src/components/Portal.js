@@ -50,25 +50,22 @@ class Portal extends React.Component {
 
   render() {
     return (
-      <Router>
-        <div className="portal">
-          <div className = 'header'>
-            <Link className="link logo" to="/"><h1>Home</h1></Link> 
-            <div className = "signOut">
-              <Link to="/">
-                  <SignOutButton> Sign Out </SignOutButton>
-              </Link>
+        <Router>
+          <div className="portal">
+            <div className = "header">
+              <Link className="link logo" to="/"><h1>Home</h1></Link> 
+              <div className = "signOut">
+                <Link to="/"><SignOutButton> Sign Out </SignOutButton></Link>
+              </div>
             </div>
+            <div className="blueStripe"/>
+            <Route path="/" exact component={ Home }/>
+            <Route path="/Portal/Course" component={ Course }/>
+            <Route path="/Portal/Teacher" component={ Teacher }/> 
+            <Route path="/reviews" exact component={ Reviews }/>
+            <Footer/> 
           </div>
-          <div className="blueStripe">
-          </div>
-          <Route path="/" exact component={ Home }/>
-          <Route path="/Portal/Course" component={ Course }/>
-          <Route path="/Portal/Teacher" component={Teacher}/> 
-          <Footer/>
-          <Route path="/reviews" exact component={ Reviews }/>
-        </div>
-      </Router>
+        </Router>
     );
   };
 }
