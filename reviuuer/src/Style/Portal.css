@@ -10,6 +10,46 @@ body.portal{
     margin-top: -15px;
 }
 
+.portalList{
+    background-color: white;
+    border:1px dotted black;
+    padding: 0;
+    display:table;
+    width:100%;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    
+}
+
+.portalList ul li {
+    display:table-cell;
+
+}
+
+.portalList li:nth-child(even) { 
+    background: white;
+    opacity: 1;
+    height: 45px;
+     
+}
+
+.portalList li:nth-child(odd) { 
+    background: #56CCF2;
+    opacity: 0.25;
+    height: 45px;
+     
+}
+
+.columnHeader{
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+    color: black;
+}
+
+
+
 .header{
     display: flex;
 }
