@@ -27,18 +27,18 @@ const addReview = (user_id, course_id, teacher_id, quality, difficulty, can_reco
 
 /* POST new review. */
 router.post('/', function(req, res) {
-    var user_id = req.param('user_id') ? req.param('user_id') : undefined;
-    var course_id = req.param('course_id') ? req.param('course_id') : undefined;
-    var teacher_id = req.param('teacher_id') ? req.param('teacher_id') : undefined;
-    var quality = req.param('quality') ? req.param('quality') : undefined;
-    var difficulty = req.param('difficulty') ? req.param('difficulty') : undefined;
-    var can_recommend = req.param('can_recommend') ? req.param('can_recommend') : undefined;
-    var worth_credits = req.param('worth_credits') ? req.param('worth_credits') : undefined;
-    var books_req = req.param('books_req') ? req.param('books_req') : undefined;
-    var percentage_mand = req.param('percentage_mand') ? req.param('percentage_mand') : undefined;
-    var exam = req.param('exam') ? req.param('exam') : undefined;
-    var course_review = req.param('course_review') ? req.param('course_review') : undefined;
-    var teacher_review = req.param('teacher_review') ? req.param('teacher_review') : undefined;
+    var user_id = req.param('user_id');
+    var course_id = req.param('course_id');
+    var teacher_id = req.param('teacher_id');
+    var quality = req.param('quality');
+    var difficulty = req.param('difficulty');
+    var can_recommend = req.param('can_recommend');
+    var worth_credits = req.param('worth_credits');
+    var books_req = req.param('books_req');
+    var percentage_mand = req.param('percentage_mand');
+    var exam = req.param('exam');
+    var course_review = req.param('course_review');
+    var teacher_review = req.param('teacher_review');
 
     if(user_id !== undefined && 
         course_id !== undefined && 
