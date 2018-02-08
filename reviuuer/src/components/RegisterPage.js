@@ -10,12 +10,17 @@ class Register extends Component {
     this.state = {email: '',
                   password: '',
                   passwordVerify:'',
-                  message: '',
-                  cookie: '',
                 };
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+
+  componentWillMount() {
+    const { cookies } = this.props;
+    document.body.classList.remove('portal');
+    document.body.classList.add('home');
+  }
+
 
   EmailClick(event) {
     this.setState({email: event.target.value});

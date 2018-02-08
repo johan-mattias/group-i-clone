@@ -17,11 +17,6 @@ class Home extends React.Component {
     super(props);
     }
 
-  componentWillMount() {
-    document.body.classList.remove('portal');
-    document.body.classList.add('home');
-  }
-
 
   render() {
     return (

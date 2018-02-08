@@ -6,6 +6,9 @@ import './Style/App.css';
 import 'typeface-roboto';
 
 import Home from './components/Home';
+import Splash from './components/Splash';
+import Login from './components/LoginPage';
+import Register from './components/RegisterPage';
 
 import './Style/index.css';
 
@@ -19,8 +22,10 @@ class App extends React.Component {
     return (
         <Router>
             <div>
-                <Route exact path='/' component={ Home }/>
                 <Route exact path='/Portal' component={ Home }/>
+                <Route path="/" exact component={ Splash }/>
+                <Route path="/login" exact component={ Login }/>
+                <Route path="/register" exact component={ Register }/>
             </div>
         </Router>
     )
