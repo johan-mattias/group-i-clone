@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
+import {ReactDOM, BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import Cookies from "universal-cookie";
 import '../Style/Button.css';
 import 'typeface-roboto';
@@ -15,6 +15,10 @@ class Register extends Component {
                 };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentWillMount() {
+    document.body.classList.add('home');
   }
 
   EmailClick(event) {

@@ -8,7 +8,7 @@ import login from './LoginPage.js';
 import Register from './RegisterPage';
 import reviews from './Reviews.js';
 import addReview from './AddReviewPage';
-import splash from './FrontPageButton';
+import splash from './Splash';
 import Portal from './Portal';
 
 
@@ -17,24 +17,19 @@ class Home extends React.Component {
     super(props);
   }
 
-  componentWillMount() {
-
-    document.body.classList.add('home');
-  }
-
   render() {
     return (
         <Router>
           <div>
-            <div className="flex-container">
-              <Route path="/" exact component={ splash }/>
-              <Route path="/login" exact component={ login }/>
-              <Route path="/register" exact component={ Register }/>
-            </div>
-            <div className="flex-container portal">
-              <Route path="/portal" exact component={ Portal }/>
-              <Route path="/reviews" exact component={ reviews }/>
-              <Route path="/addreview" exact component={ addReview }/>
+            <div className="flex-container home">
+              <div className="row"> 
+                <Route path="/" exact component={ splash }/>
+                <Route path="/login" exact component={ login }/>
+                <Route path="/register" exact component={ Register }/>
+                <Route path="/portal" exact component={ Portal }/>
+                <Route path="/reviews" exact component={ reviews }/>
+                <Route path="/addreview" exact component={ addReview }/>
+              </div>
             </div>
           </div>
         </Router>
