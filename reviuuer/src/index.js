@@ -22,10 +22,10 @@ class App extends React.Component {
     return (
         <Router>
             <div>
-                <Route exact path='/Portal' component={ Home }/>
                 <Route path="/" exact component={ Splash }/>
-                <Route path="/login" exact component={ Login }/>
-                <Route path="/register" exact component={ Register }/>
+                <Route exact path="/login" exact component={ Login }/>
+                <Route exact path="/register" exact component={ Register }/>
+                <Route exact path='/Portal' component={ Home }/>
             </div>
         </Router>
     )

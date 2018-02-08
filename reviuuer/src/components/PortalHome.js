@@ -4,15 +4,27 @@ import {ReactDOM, BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import Cookies from "universal-cookie";
 import {withRouter} from "react-router-dom";
 
-import PortalHome from './PortalHome.js';
 import Reviews from './Reviews.js';
+import Footer from './Footer';
 import Home from './Home.js';
 import Course from './Course.js';
 import Teacher from './Teacher.js'
 
-class Portal extends React.Component {
+import '../Style/Button.css';
+import 'typeface-roboto';
+
+class PortalHome extends React.Component {
   constructor(props) {
-  super(props);
+    super(props);
+
+     this.handleSingOut = this.handleSingOut.bind(this);
+  }
+
+  handleSingOut(e) {
+    e.preventDefault();
+    //TODO add so we remove the cookie
+    this.props.history.push('/');
+    console.log("TRY TO SIGN OUT")
   }
 
   componentWillMount() {
@@ -40,21 +52,24 @@ class Portal extends React.Component {
             }
           })
         })
+    document.body.classList.remove('home');
+    document.body.classList.add('portal'); //adding the correct background by setting the class of the body
   }
 
   render() {
     return (
-        <Router>
-          <div>
-            <Route path="/" exact component={ Home }/>
-            <Route path="/Portal" exact component={ PortalHome }/>
-            <Route path="/Portal/Course" component={ Course }/>
-            <Route path="/Portal/Teacher" component={Teacher}/> 
-            <Route path="/reviews" exact component={ Reviews }/>
+          <div className="portal">
+            <div className = 'header'>
+              <Link className="link logo" to='/'><h1>Home</h1></Link> 
+              <div className = "signOut">
+                <button className="Signout" onClick={this.handleSingOut}>SIGN OUT</button>
+              </div>
+            </div>
+            <div className="blueStripe"/>
+            <Footer/> 
           </div>
-        </Router>
     );
   };
 }
 
-export default withRouter(Portal);
+export default withRouter(PortalHome);
