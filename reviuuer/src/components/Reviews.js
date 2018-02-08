@@ -8,36 +8,17 @@ class Reviews extends React.Component {
   }
 
   componentWillMount = () => {
-    fetch('/api/auth?email=admin&password=1234')
-      .then(
-        (res) => { 
+    fetch('/api/reviews')
+      .then((res) => {
         if(res.status !== 200) {
           console.log('Looks like there was a problem. Status Code: ' +
             res.status);
           return;
         }
+        console.log(res)
         res.json()
-          .then((json) => { 
-            const access = json.access
-            this.setState({access})
-          })
-        })
-
-        .then( () => {
-          if(this.state.access) {
-            fetch('/api/reviews')
-              .then((res) => { 
-                if(res.status !== 200) {
-                  console.log('Looks like there was a problem. Status Code: ' +
-                    res.status);
-                  return;
-                }
-                console.log(res)
-                res.json()
-                  .then(reviews => this.setState({ reviews }));
-              })
-          }
-        })
+          .then(reviews => this.setState({ reviews }));
+      })
   }
   
   render() {
