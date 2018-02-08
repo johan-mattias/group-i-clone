@@ -21,8 +21,6 @@ class Login extends React.Component {
  
   componentWillMount() {
     const { cookies } = this.props;
-    document.body.classList.remove('portal');
-    document.body.classList.add('home');
   }
 
   EmailClick(event) {
@@ -60,10 +58,7 @@ class Login extends React.Component {
                 const days = 30
                 date.setDate(date.getDate() + parseInt(days));
                 cookies.set('user', token, {path: '/', expires: date} );
-                console.log("Push , correct password");
                 this.props.history.push('portal');
-
-              // this.props.push('/portal'); // Push user to portal here
              }
             else {
               console.log("Wrong username or password")

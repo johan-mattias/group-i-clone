@@ -17,11 +17,6 @@ class Register extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentWillMount() {
-    document.body.classList.remove('portal');
-    document.body.classList.add('home');
-  }
-
   EmailClick(event) {
     this.setState({email: event.target.value});
   }
@@ -78,8 +73,6 @@ class Register extends Component {
                 const days = 30
                 date.setDate(date.getDate() + parseInt(days));
                 cookies.set('user', token, {path: '/', expires: date} );
-                console.log("Push , correct added"); 
-
                 this.props.history.push('portal');
               }
             })

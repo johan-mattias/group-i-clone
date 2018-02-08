@@ -14,29 +14,27 @@ import Portal from './Portal';
 
 class Home extends React.Component {
   constructor(props) {
-    super(props)
-        this.state = { componentShown: Splash,
-                      };
+    super(props);
     }
 
-    // handler() {
-    //   console.log("setting splash")
-    //   this.setState({componentShown: Splash});
-    // }
+  componentWillMount() {
+    document.body.classList.remove('portal');
+    document.body.classList.add('home');
+  }
 
 
   render() {
     return (
-      <Router>
-        <div>
-            <Route path="/" exact component={ this.state.componentShown }/>
-            <Route path="/portal" exact component={ Portal }/>
-            <Route path="/login" exact component={ Login }/>
-            <Route path="/register" exact component={ Register }/>
-            <Route path="/reviews" exact component={ Reviews }/>
-            <Route path="/addreview" exact component={ AddReview }/>
-          </div>   
-      </Router>
+        <Router>
+          <div>
+              <Route path="/" exact component={ Splash }/>
+              <Route path="/portal" exact component={ Portal }/>
+              <Route path="/login" exact component={ Login }/>
+              <Route path="/register" exact component={ Register }/>
+              <Route path="/reviews" exact component={ Reviews }/>
+              <Route path="/addreview" exact component={ AddReview }/>
+            </div>   
+        </Router>
     );
   };
 }
