@@ -49,10 +49,15 @@ class Portal extends React.Component {
     return (
         <Router>
           <div className="portal">
+            <div className = 'header'>
+            <h1>Home</h1> 
             <div className = "signOut">
             <Link to="/">
                 <SignOutButton> Sign Out </SignOutButton>
             </Link>
+            </div>
+            </div>
+            <div className="blueStripe">
             </div>
             <Route path="/" exact component={ Home }/>
             <Route path="/portal/teacher" component={ ()=> {
