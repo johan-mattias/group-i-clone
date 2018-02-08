@@ -40,11 +40,10 @@ class Portal extends React.Component {
              }
             else {
               console.log("Wrong cookie ")
-              // this.props.push('/'); // Push user back to splash here
+              this.props.history.push('/')
             }
           })
         })
-
     document.body.classList.remove('home');
     document.body.classList.add('portal'); //adding the correct background by setting the class of the body
   }
