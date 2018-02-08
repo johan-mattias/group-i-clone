@@ -9,6 +9,7 @@ import Register from './RegisterPage';
 import reviews from './Reviews.js';
 import addReview from './AddReviewPage';
 import splash from './FrontPageButton';
+import Portal from './Portal';
 
 
 class Home extends React.Component {
@@ -32,6 +33,7 @@ class Home extends React.Component {
                   <Route path="/" exact component={ splash }/>
                   <Route path="/login" exact component={ login }/>
                   <Route path="/register" exact component={ Register }/>
+                  <Route path="/portal" exact component={ Portal }/>
                   <Route path="/reviews" exact component={ reviews }/>
                   <Route path="/addreview" exact component={ addReview }/>
               </div>

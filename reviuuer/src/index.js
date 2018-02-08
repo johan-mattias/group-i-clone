@@ -6,7 +6,6 @@ import './Style/App.css';
 import 'typeface-roboto';
 
 import Home from './components/Home';
-import Portal from './components/Portal';
 
 import './Style/index.css';
 
@@ -14,19 +13,13 @@ import './Style/index.css';
 class App extends React.Component {
     constructor(props) {
     super(props);
-    this.state = {path: '',
-                  component: undefined,
-                };
     }
 
-render() {
+    render() {
     return (
         <Router>
             <div>
-                <Switch>
-                    <Route path="/portal" component={ Portal }/>
-                    <Route exact path='/' component={ Home }/>
-                </Switch>
+                <Route exact path='/' component={ Home }/>
             </div>
         </Router>
     )
