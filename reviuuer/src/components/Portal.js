@@ -3,11 +3,13 @@ import {NavLink} from 'react-router-dom';
 import {ReactDOM, BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import Cookies from "universal-cookie";
 import {withRouter} from "react-router-dom";
-import Reviews from './Reviews.js'
+import Reviews from './Reviews.js';
 import Footer from './Footer';
-import SignOutButton from './SignOutButton'
-import Home from './Home.js'
-import '../Style/Button.css'
+import SignOutButton from './SignOutButton';
+import Home from './Home.js';
+import Course from './Course.js';
+import Teacher from './Teacher.js'
+import '../Style/Button.css';
 import 'typeface-roboto';
 
 class Portal extends React.Component {
@@ -60,10 +62,8 @@ class Portal extends React.Component {
             <div className="blueStripe">
             </div>
             <Route path="/" exact component={ Home }/>
-            <Route path="/portal/teacher" component={ ()=> {
-             return <p>Hello</p>
-            } }/>
-            {/* <Route path="/Course" component={ Course }/> */}
+            <Route path="/Portal/Course" component={ Course }/>
+            <Route path="/Portal/Teacher" component={Teacher}/> 
             <Footer/>
             <Route path="/reviews" exact component={ Reviews }/>
             </div>

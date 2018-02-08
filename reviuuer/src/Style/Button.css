@@ -44,6 +44,7 @@ button.nav{
       height: 69px;
       flex-grow: 1;
       width: 100%;
+      outline: none;
    
 }
 
