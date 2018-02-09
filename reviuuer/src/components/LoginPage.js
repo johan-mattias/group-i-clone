@@ -73,13 +73,15 @@ class Login extends React.Component {
   render() {
     return (
     <div>
-        <div className="flex-container">
-          <form className="login-column" onSubmit={this.handleSubmit}>
-            <input className="login" placeholder="Email" value={this.state.email} onChange={this.EmailClick.bind(this)} /> {/*TODO addtype="email"*/}
-            <input className="login" type="password" placeholder="Password" value={this.state.password} onChange={this.PwdClick.bind(this)} />
-            <input className="submit" type="submit" value="LOGIN" />
-          </form>
-        </div>
+      <div><h1><Link className="link logo" to="/">ReviUUer</Link></h1></div>
+      <hr/>
+      <div className="flex-container">
+        <form className="login-column" onSubmit={this.handleSubmit}>
+          <input className="login" placeholder="Email" value={this.state.email} onChange={this.EmailClick.bind(this)} /> {/*TODO addtype="email"*/}
+          <input className="login" type="password" placeholder="Password" value={this.state.password} onChange={this.PwdClick.bind(this)} />
+          <input className="submit" type="submit" value="LOGIN" />
+        </form>
+      </div>
     </div>
     );
   };

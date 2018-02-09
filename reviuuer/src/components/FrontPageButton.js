@@ -5,11 +5,17 @@ import 'typeface-roboto';
 
 
 const FrontPageButton = () =>{
+  document.body.className = "home";
+
   return (
-    <div className="login-column">
-        <Link className="link" to="/register"><button className="home">REGISTER</button></Link>
-        <br></br>
-        <Link className="link" to="/login"><button className="home">LOGIN</button></Link>
+    <div>
+      <div><h1><Link className="link logo" to="/">ReviUUer</Link></h1></div>
+      <hr/>
+      <div className="login-column">
+          <Link className="link" to="/register"><button className="home">REGISTER</button></Link>
+          <br></br>
+          <Link className="link" to="/login"><button className="home">LOGIN</button></Link>
+      </div>
     </div>
   )
 };

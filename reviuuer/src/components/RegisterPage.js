@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 import Cookies from "universal-cookie";
 import '../Style/Button.css';
 import 'typeface-roboto';
@@ -72,7 +73,9 @@ class Register extends Component {
                 const days = 30
                 date.setDate(date.getDate() + parseInt(days));
                 cookies.set('user', token, {path: '/', expires: date} );
-                console.log("Push , correct added"); //TODO push user to portal here 
+                console.log("Push , correct added"); 
+
+                this.props.history.push('portal');
               }
             })
         })
@@ -83,6 +86,8 @@ class Register extends Component {
   render() {
     return (
       <div>
+        <div><h1><Link className="link logo" to="/">ReviUUer</Link></h1></div>
+        <hr/>
         <form className="login-column" onSubmit={this.handleSubmit}>
           <input className="login" placeholder="Email" value={this.state.email} onChange={this.EmailClick.bind(this)} /> {/*TODO add type="email"*/}
           <input className="login" type="password" placeholder="Password" value={this.state.password} onChange={this.PwdClick.bind(this)} />
