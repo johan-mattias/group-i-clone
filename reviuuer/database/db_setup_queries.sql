@@ -6,6 +6,7 @@ CREATE TABLE reviuuer.user (
     id int NOT NULL AUTO_INCREMENT,
     email varchar(255),
     password varchar(255),
+	date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	PRIMARY KEY (id)
 );
 
@@ -42,6 +43,7 @@ CREATE TABLE reviuuer.review (
 	exam bool,
 	course_review varchar(255),
 	teacher_review varchar(255),
+	date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	PRIMARY KEY (id),
 	FOREIGN KEY (user_id) REFERENCES reviuuer.user(id),	
 	FOREIGN KEY (course_id) REFERENCES reviuuer.course(id),
@@ -53,6 +55,7 @@ CREATE TABLE reviuuer.comment (
 	user_id int,
 	review_id int,
 	comment_text varchar(255),
+	date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	PRIMARY KEY (id),
 	FOREIGN KEY (user_id) REFERENCES reviuuer.user(id),
 	FOREIGN KEY (review_id) REFERENCES reviuuer.review(id)
@@ -64,6 +67,7 @@ CREATE TABLE reviuuer.likeAndDislike (
 	review_id int,
 	comment_id int,
   	like_type ENUM('like', 'dislike'),
+	date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	PRIMARY KEY (id),
 	FOREIGN KEY (user_id) REFERENCES reviuuer.user(id)
 );
