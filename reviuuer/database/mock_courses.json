@@ -1,0 +1,302 @@
+[
+    {
+      "id": 1,
+      "name": "course1",
+      "c_level": "G1",
+      "pace_of_study": 50,
+      "teaching_form": "distans",
+      "course_language": "Swedish",
+      "app_code": "uzST20Rb8t",
+      "course_online": 1
+    },
+    {
+      "id": 2,
+      "name": "course2",
+      "c_level": "G2",
+      "pace_of_study": 100,
+      "teaching_form": "föreläsningar",
+      "course_language": "Swedish",
+      "app_code": "Xfe7t2oqZS",
+      "course_online": 0
+    },
+    {
+      "id": 3,
+      "name": "course3",
+      "c_level": "G2",
+      "pace_of_study": 100,
+      "teaching_form": "distans",
+      "course_language": "English",
+      "app_code": "IrVe75GK",
+      "course_online": 0
+    },
+    {
+      "id": 4,
+      "name": "course4",
+      "c_level": "A1",
+      "pace_of_study": 100,
+      "teaching_form": "distans",
+      "course_language": "Other",
+      "app_code": "hTv6lE",
+      "course_online": 0
+    },
+    {
+      "id": 5,
+      "name": "course5",
+      "c_level": "G2",
+      "pace_of_study": 100,
+      "teaching_form": "föreläsningar",
+      "course_language": "English",
+      "app_code": "OerHZeh",
+      "course_online": 0
+    },
+    {
+      "id": 6,
+      "name": "course6",
+      "c_level": "A2",
+      "pace_of_study": 50,
+      "teaching_form": "distans",
+      "course_language": "English",
+      "app_code": "SRuiNrQSHf9",
+      "course_online": 0
+    },
+    {
+      "id": 7,
+      "name": "course7",
+      "c_level": "A1",
+      "pace_of_study": 100,
+      "teaching_form": "distans",
+      "course_language": "Other",
+      "app_code": "6cBgGP5",
+      "course_online": 0
+    },
+    {
+      "id": 8,
+      "name": "course8",
+      "c_level": "A2",
+      "pace_of_study": 100,
+      "teaching_form": "distans",
+      "course_language": "Swedish",
+      "app_code": "1dBKmY5ib9",
+      "course_online": 1
+    },
+    {
+      "id": 9,
+      "name": "course9",
+      "c_level": "G2",
+      "pace_of_study": 50,
+      "teaching_form": "föreläsningar",
+      "course_language": "English",
+      "app_code": "0Vypcy",
+      "course_online": 1
+    },
+    {
+      "id": 10,
+      "name": "course10",
+      "c_level": "G1",
+      "pace_of_study": 100,
+      "teaching_form": "distans",
+      "course_language": "Swedish",
+      "app_code": "hibGFtk5wK6q",
+      "course_online": 1
+    },
+    {
+      "id": 11,
+      "name": "course11",
+      "c_level": "A1",
+      "pace_of_study": 50,
+      "teaching_form": "föreläsningar",
+      "course_language": "Swedish",
+      "app_code": "wmViIZYDnpV",
+      "course_online": 0
+    },
+    {
+      "id": 12,
+      "name": "course12",
+      "c_level": "A1",
+      "pace_of_study": 100,
+      "teaching_form": "distans",
+      "course_language": "Other",
+      "app_code": "nBF7LSN",
+      "course_online": 0
+    },
+    {
+      "id": 13,
+      "name": "course13",
+      "c_level": "A2",
+      "pace_of_study": 100,
+      "teaching_form": "föreläsningar",
+      "course_language": "Swedish",
+      "app_code": "dyDfbczl1k6",
+      "course_online": 1
+    },
+    {
+      "id": 14,
+      "name": "course14",
+      "c_level": "A2",
+      "pace_of_study": 100,
+      "teaching_form": "distans",
+      "course_language": "Swedish",
+      "app_code": "q18oD3JkKX",
+      "course_online": 1
+    },
+    {
+      "id": 15,
+      "name": "course15",
+      "c_level": "A1",
+      "pace_of_study": 50,
+      "teaching_form": "föreläsningar",
+      "course_language": "Other",
+      "app_code": "oimXQXv",
+      "course_online": 1
+    },
+    {
+      "id": 16,
+      "name": "course16",
+      "c_level": "A2",
+      "pace_of_study": 50,
+      "teaching_form": "föreläsningar",
+      "course_language": "English",
+      "app_code": "eoDamS2J37h1",
+      "course_online": 0
+    },
+    {
+      "id": 17,
+      "name": "course17",
+      "c_level": "G1",
+      "pace_of_study": 100,
+      "teaching_form": "distans",
+      "course_language": "Swedish",
+      "app_code": "cL0l1DNOhYav",
+      "course_online": 0
+    },
+    {
+      "id": 18,
+      "name": "course18",
+      "c_level": "G2",
+      "pace_of_study": 100,
+      "teaching_form": "distans",
+      "course_language": "English",
+      "app_code": "umKesW",
+      "course_online": 1
+    },
+    {
+      "id": 19,
+      "name": "course19",
+      "c_level": "A1",
+      "pace_of_study": 50,
+      "teaching_form": "distans",
+      "course_language": "English",
+      "app_code": "8uV92PhjnJ",
+      "course_online": 0
+    },
+    {
+      "id": 20,
+      "name": "course20",
+      "c_level": "A2",
+      "pace_of_study": 50,
+      "teaching_form": "föreläsningar",
+      "course_language": "Swedish",
+      "app_code": "2tJoHBE0tWt",
+      "course_online": 1
+    },
+    {
+      "id": 21,
+      "name": "course21",
+      "c_level": "A1",
+      "pace_of_study": 50,
+      "teaching_form": "distans",
+      "course_language": "English",
+      "app_code": "j8RIvi",
+      "course_online": 1
+    },
+    {
+      "id": 22,
+      "name": "course22",
+      "c_level": "G2",
+      "pace_of_study": 50,
+      "teaching_form": "distans",
+      "course_language": "Other",
+      "app_code": "f9tlbDNP",
+      "course_online": 1
+    },
+    {
+      "id": 23,
+      "name": "course23",
+      "c_level": "A2",
+      "pace_of_study": 50,
+      "teaching_form": "distans",
+      "course_language": "Other",
+      "app_code": "ZTdPuz9e",
+      "course_online": 1
+    },
+    {
+      "id": 24,
+      "name": "course24",
+      "c_level": "A1",
+      "pace_of_study": 100,
+      "teaching_form": "distans",
+      "course_language": "Other",
+      "app_code": "VdUC2fj",
+      "course_online": 0
+    },
+    {
+      "id": 25,
+      "name": "course25",
+      "c_level": "G1",
+      "pace_of_study": 100,
+      "teaching_form": "föreläsningar",
+      "course_language": "English",
+      "app_code": "LjKK51ub8ze",
+      "course_online": 1
+    },
+    {
+      "id": 26,
+      "name": "course26",
+      "c_level": "A2",
+      "pace_of_study": 100,
+      "teaching_form": "distans",
+      "course_language": "Swedish",
+      "app_code": "6HYgTWXScx",
+      "course_online": 0
+    },
+    {
+      "id": 27,
+      "name": "course27",
+      "c_level": "G1",
+      "pace_of_study": 100,
+      "teaching_form": "föreläsningar",
+      "course_language": "English",
+      "app_code": "Ww5yjEQ",
+      "course_online": 1
+    },
+    {
+      "id": 28,
+      "name": "course28",
+      "c_level": "G1",
+      "pace_of_study": 100,
+      "teaching_form": "distans",
+      "course_language": "Swedish",
+      "app_code": "n0lEGS75W",
+      "course_online": 0
+    },
+    {
+      "id": 29,
+      "name": "course29",
+      "c_level": "A1",
+      "pace_of_study": 100,
+      "teaching_form": "distans",
+      "course_language": "Swedish",
+      "app_code": "5MAkaooQA",
+      "course_online": 1
+    },
+    {
+      "id": 30,
+      "name": "course30",
+      "c_level": "G2",
+      "pace_of_study": 50,
+      "teaching_form": "distans",
+      "course_language": "English",
+      "app_code": "o5y4vWnvt3P9",
+      "course_online": 1
+    }
+  ]

@@ -12,8 +12,9 @@ CREATE TABLE reviuuer.user (
 
 CREATE TABLE reviuuer.course (
 	id int NOT NULL AUTO_INCREMENT,
-	c_level ENUM('G1', 'G2', 'A1', 'A2'),
-	pace_of_study int,
+	name varchar(255),
+ 	c_level ENUM('G1', 'G2', 'A1', 'A2'),
+	pace_of_study  int,
 	teaching_form varchar(255),
 	course_language ENUM('English', 'Swedish', 'Other'),
 	app_code varchar(255),
@@ -231,36 +232,36 @@ insert into program (id, name, credits, master) values (9, 'Architect', 180, 0);
 insert into program (id, name, credits, master) values (10, 'Juristmaster', 120, 1);
 
 -- course
-insert into course (id, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (1, 'G1', 50, 'distans', 'Swedish', 'uzST20Rb8t', 1);
-insert into course (id, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (2, 'G2', 100, 'föreläsningar', 'Swedish', 'Xfe7t2oqZS', 0);
-insert into course (id, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (3, 'G2', 100, 'distans', 'English', 'IrVe75GK', 0);
-insert into course (id, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (4, 'A1', 100, 'distans', 'Other', 'hTv6lE', 0);
-insert into course (id, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (5, 'G2', 100, 'föreläsningar', 'English', 'OerHZeh', 0);
-insert into course (id, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (6, 'A2', 50, 'distans', 'English', 'SRuiNrQSHf9', 0);
-insert into course (id, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (7, 'A1', 100, 'distans', 'Other', '6cBgGP5', 0);
-insert into course (id, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (8, 'A2', 100, 'distans', 'Swedish', '1dBKmY5ib9', 1);
-insert into course (id, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (9, 'G2', 50, 'föreläsningar', 'English', '0Vypcy', 1);
-insert into course (id, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (10, 'G1', 100, 'distans', 'Swedish', 'hibGFtk5wK6q', 1);
-insert into course (id, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (11, 'A1', 50, 'föreläsningar', 'Swedish', 'wmViIZYDnpV', 0);
-insert into course (id, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (12, 'A1', 100, 'distans', 'Other', 'nBF7LSN', 0);
-insert into course (id, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (13, 'A2', 100, 'föreläsningar', 'Swedish', 'dyDfbczl1k6', 1);
-insert into course (id, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (14, 'A2', 100, 'distans', 'Swedish', 'q18oD3JkKX', 1);
-insert into course (id, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (15, 'A1', 50, 'föreläsningar', 'Other', 'oimXQXv', 1);
-insert into course (id, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (16, 'A2', 50, 'föreläsningar', 'English', 'eoDamS2J37h1', 0);
-insert into course (id, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (17, 'G1', 100, 'distans', 'Swedish', 'cL0l1DNOhYav', 0);
-insert into course (id, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (18, 'G2', 100, 'distans', 'English', 'umKesW', 1);
-insert into course (id, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (19, 'A1', 50, 'distans', 'English', '8uV92PhjnJ', 0);
-insert into course (id, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (20, 'A2', 50, 'föreläsningar', 'Swedish', '2tJoHBE0tWt', 1);
-insert into course (id, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (21, 'A1', 50, 'distans', 'English', 'j8RIvi', 1);
-insert into course (id, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (22, 'G2', 50, 'distans', 'Other', 'f9tlbDNP', 1);
-insert into course (id, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (23, 'A2', 50, 'distans', 'Other', 'ZTdPuz9e', 1);
-insert into course (id, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (24, 'A1', 100, 'distans', 'Other', 'VdUC2fj', 0);
-insert into course (id, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (25, 'G1', 100, 'föreläsningar', 'English', 'LjKK51ub8ze', 1);
-insert into course (id, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (26, 'A2', 100, 'distans', 'Swedish', '6HYgTWXScx', 0);
-insert into course (id, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (27, 'G1', 100, 'föreläsningar', 'English', 'Ww5yjEQ', 1);
-insert into course (id, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (28, 'G1', 100, 'distans', 'Swedish', 'n0lEGS75W', 0);
-insert into course (id, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (29, 'A1', 100, 'distans', 'Swedish', '5MAkaooQA', 1);
-insert into course (id, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (30, 'G2', 50, 'distans', 'English', 'o5y4vWnvt3P9', 1);
+insert into course (id, name, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (1, 'course1', 'G1', 50, 'distans', 'Swedish', 'uzST20Rb8t', 1);
+insert into course (id, name, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (2, 'course2', 'G2', 100, 'föreläsningar', 'Swedish', 'Xfe7t2oqZS', 0);
+insert into course (id, name, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (3, 'course3', 'G2', 100, 'distans', 'English', 'IrVe75GK', 0);
+insert into course (id, name, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (4, 'course4', 'A1', 100, 'distans', 'Other', 'hTv6lE', 0);
+insert into course (id, name, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (5, 'course5', 'G2', 100, 'föreläsningar', 'English', 'OerHZeh', 0);
+insert into course (id, name, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (6, 'course6', 'A2', 50, 'distans', 'English', 'SRuiNrQSHf9', 0);
+insert into course (id, name, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (7, 'course7', 'A1', 100, 'distans', 'Other', '6cBgGP5', 0);
+insert into course (id, name, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (8, 'course8', 'A2', 100, 'distans', 'Swedish', '1dBKmY5ib9', 1);
+insert into course (id, name, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (9, 'course9', 'G2', 50, 'föreläsningar', 'English', '0Vypcy', 1);
+insert into course (id, name, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (10, 'course10', 'G1', 100, 'distans', 'Swedish', 'hibGFtk5wK6q', 1);
+insert into course (id, name, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (11, 'course11', 'A1', 50, 'föreläsningar', 'Swedish', 'wmViIZYDnpV', 0);
+insert into course (id, name, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (12, 'course12', 'A1', 100, 'distans', 'Other', 'nBF7LSN', 0);
+insert into course (id, name, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (13, 'course13', 'A2', 100, 'föreläsningar', 'Swedish', 'dyDfbczl1k6', 1);
+insert into course (id, name, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (14, 'course14', 'A2', 100, 'distans', 'Swedish', 'q18oD3JkKX', 1);
+insert into course (id, name, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (15, 'course15', 'A1', 50, 'föreläsningar', 'Other', 'oimXQXv', 1);
+insert into course (id, name, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (16, 'course16', 'A2', 50, 'föreläsningar', 'English', 'eoDamS2J37h1', 0);
+insert into course (id, name, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (17, 'course17', 'G1', 100, 'distans', 'Swedish', 'cL0l1DNOhYav', 0);
+insert into course (id, name, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (18, 'course18', 'G2', 100, 'distans', 'English', 'umKesW', 1);
+insert into course (id, name, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (19, 'course19', 'A1', 50, 'distans', 'English', '8uV92PhjnJ', 0);
+insert into course (id, name, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (20, 'course20', 'A2', 50, 'föreläsningar', 'Swedish', '2tJoHBE0tWt', 1);
+insert into course (id, name, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (21, 'course21', 'A1', 50, 'distans', 'English', 'j8RIvi', 1);
+insert into course (id, name, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (22, 'course22', 'G2', 50, 'distans', 'Other', 'f9tlbDNP', 1);
+insert into course (id, name, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (23, 'course23', 'A2', 50, 'distans', 'Other', 'ZTdPuz9e', 1);
+insert into course (id, name, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (24, 'course24', 'A1', 100, 'distans', 'Other', 'VdUC2fj', 0);
+insert into course (id, name, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (25, 'course25', 'G1', 100, 'föreläsningar', 'English', 'LjKK51ub8ze', 1);
+insert into course (id, name, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (26, 'course26', 'A2', 100, 'distans', 'Swedish', '6HYgTWXScx', 0);
+insert into course (id, name, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (27, 'course27', 'G1', 100, 'föreläsningar', 'English', 'Ww5yjEQ', 1);
+insert into course (id, name, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (28, 'course28', 'G1', 100, 'distans', 'Swedish', 'n0lEGS75W', 0);
+insert into course (id, name, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (29, 'course29', 'A1', 100, 'distans', 'Swedish', '5MAkaooQA', 1);
+insert into course (id, name, c_level, pace_of_study, teaching_form, course_language, app_code, course_online) values (30, 'course30', 'G2', 50, 'distans', 'English', 'o5y4vWnvt3P9', 1);
 
 -- review
 insert into review (id, user_id, course_id, teacher_id, quality, difficulty, can_recommend, worth_credits, books_req, percentage_mand, exam, course_review, teacher_review) values (1, 33, 18, 33, 2, 5, 1, 3, 1, 5, 1, 'Cotinus Mill.', 'Smoketree');
