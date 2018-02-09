@@ -3,10 +3,10 @@ var router = express.Router();
 var mysql = require('mysql');
 var mysqlConf = require('../config.js').mysql_pool;
 
-const fetchTeachers = (cb) => {
+const fetchCourses = (cb) => {
   mysqlConf.getConnection(function (err, connection) {
     connection.query({
-      sql: 'SELECT * FROM teacher',
+      sql: 'SELECT * FROM course',
       timeout: 40000, // 40s
       values: []
     }, function (error, results, fields) {
@@ -23,7 +23,7 @@ const fetchTeachers = (cb) => {
 
 /* GET teachers. */
 router.get('/', function(req, res) {
-  fetchTeachers((error, reviews) => {
+  fetchCourses((error, reviews) => {
       res.json(reviews);
     })
 });
