@@ -11,15 +11,12 @@ import Course from './Course.js';
 import Teacher from './Teacher.js'
 import '../Style/Button.css';
 import '../Style/App.css';
+import '../Style/Portal.css';
 import 'typeface-roboto';
 
 class Portal extends React.Component {
   constructor(props) {
   super(props);
-  }
-
-  state = {
-    loggedIn: 1
   }
 
   componentWillMount() {
@@ -51,54 +48,30 @@ class Portal extends React.Component {
     document.body.classList.add('portal'); //adding the correct background by setting the class of the body
   }
 
-  logIn() {
+  render() {
     return (
+      <div className="portalContainer">
         <div>
-          <div className="portal">
-            <div className = 'header'>
+          <div className = "header">
             <h1>Home</h1> 
             <div className = "signOut">
-            <Link className="link" to="/">
-                <SignOutButton> Sign Out </SignOutButton>
-            </Link>
+              <Link className="link" to="/">
+                  <SignOutButton>Sign Out</SignOutButton>
+              </Link>
             </div>
+          </div>
+          <div className="blueStripe" />
+          
+          <Router>
+            <div>
+              <Route path="/" exact component={ Home }/>
+              <Route path="/Portal/Course" component={ Course }/>
+              <Route path="/Portal/Teacher" component={Teacher}/> 
+              <Footer/>
+              <Route path="/reviews" exact component={ Reviews }/>
             </div>
-            <div className="blueStripe">
-            </div>
-            <Router>
-              <div>
-                <Route path="/" exact component={ Home }/>
-                <Route path="/Portal/Course" component={ Course }/>
-                <Route path="/Portal/Teacher" component={Teacher}/> 
-                <Footer/>
-                <Route path="/reviews" exact component={ Reviews }/>
-              </div>
-            </Router>
-            </div>
+          </Router>
         </div>
-    );
-  }
-
-  logOut() {
-    // this.setState({loggedIn:0});
-    // setTimeout(() => { return(undefined); }, 3000);
-  }
-
-  componentDidMount = () => {
-    
-  }
-  
-
-  render() {
-    let rend = this.state.loggedIn ? this.logIn() : this.logOut()
-
-    let loc = this.props.location.pathname;
-    document.body.className = "portal";
-
-    console.log(this.props)
-    return (
-      <div>
-        {rend}
       </div>
     );
   };

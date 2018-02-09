@@ -71,6 +71,12 @@ a:hover {
     justify-content: center;
 }
 
+.flex-container.portal {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
 .login-column {
     padding-top: 50px;
     display: flex;

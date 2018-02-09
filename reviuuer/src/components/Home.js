@@ -25,16 +25,18 @@ class Home extends React.Component {
   render() {
     return (
         <Router>
-            <div className="flex-container home">
-              <div className="row"> 
-                <Route path="/" exact component={ splash }/>
-                <Route path="/login" exact component={ login }/>
-                <Route path="/register" exact component={ Register }/>
-                <Route path="/portal" exact component={ Portal }/>
-                <Route path="/reviews" exact component={ reviews }/>
-                <Route path="/addreview" exact component={ addReview }/>
-              </div>
+          <div>
+            <div className="flex-container">
+              <Route path="/" exact component={ splash }/>
+              <Route path="/login" exact component={ login }/>
+              <Route path="/register" exact component={ Register }/>
             </div>
+            <div className="flex-container portal">
+              <Route path="/portal" exact component={ Portal }/>
+              <Route path="/reviews" exact component={ reviews }/>
+              <Route path="/addreview" exact component={ addReview }/>
+            </div>
+          </div>
         </Router>
     );
   };
