@@ -11,6 +11,7 @@ import Course from './Course.js';
 import Teacher from './Teacher.js'
 
 import '../Style/Button.css';
+import '../Style/Portal.css';
 import 'typeface-roboto';
 
 class PortalHome extends React.Component {
@@ -58,16 +59,16 @@ class PortalHome extends React.Component {
 
   render() {
     return (
-          <div className="portal">
-            <div className = 'header'>
-              <Link className="link logo" to='/'><h1>Home</h1></Link> 
-              <div className = "signOut">
-                <button className="Signout" onClick={this.handleSingOut}>SIGN OUT</button>
-              </div>
-            </div>
-            <div className="blueStripe"/>
-            <Footer/> 
+      <div className="portal">
+        <div className = 'header'>
+          <h1>Home</h1>
+          <div className = "signOutContainer">
+            <button className="signOut" onClick={this.handleSingOut}>SIGN OUT</button>
           </div>
+        </div>
+        <div className="blueStripe"/>
+        <Footer/> 
+      </div>
     );
   };
 }
