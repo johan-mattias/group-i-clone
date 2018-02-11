@@ -79,4 +79,5 @@ button.home {
 
 .navLink {
       flex-grow: 1;
+      width: 33%
 }
