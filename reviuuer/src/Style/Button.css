@@ -81,3 +81,7 @@ button.home {
       flex-grow: 1;
       width: 33%
 }
+
+*:focus {
+    outline: none;
+}

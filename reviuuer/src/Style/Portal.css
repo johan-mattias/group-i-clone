@@ -94,3 +94,7 @@ button.signOut{
     bottom: 0px;
     width: 100%;
 }
+
+*:focus {
+    outline: none;
+}

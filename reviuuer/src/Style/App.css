@@ -7,6 +7,10 @@ body.home{
   text-align: center;
 }
 
+*:focus {
+    outline: none;
+}
+
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
