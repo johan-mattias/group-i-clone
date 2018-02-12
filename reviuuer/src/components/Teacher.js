@@ -5,6 +5,18 @@ import Footer from './Footer';
 import '../Style/Portal.css';
 
 class Teacher extends React.Component{
+  constructor(props) {
+    super(props);
+
+     this.handleSingOut = this.handleSingOut.bind(this);
+  }
+
+  handleSingOut(e) {
+    e.preventDefault();
+    //TODO add so we remove the cookie
+    this.props.history.push('/');
+    console.log("TRY TO SIGN OUT")
+  }
 
   componentWillMount() {
     const c = new Cookies();
