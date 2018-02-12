@@ -49,11 +49,12 @@ button.nav{
       background-color: #2F80ED;
       border: 1px solid white;
       color:white; 
-      font-size: 25px;
+      font-size: 11px;
       height: 69px;
       flex-grow: 1;
       width: 100%;
       outline: none;
+      
    
 }
 
@@ -79,7 +80,7 @@ button.home {
 
 .navLink {
       flex-grow: 1;
-      width: 33%
+      width: 20%
 }
 
 *:focus {
