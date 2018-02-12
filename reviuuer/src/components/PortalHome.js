@@ -21,12 +21,25 @@ class PortalHome extends React.Component {
      this.handleSingOut = this.handleSingOut.bind(this);
   }
 
+  state = { 
+    reviews: []
+  }
+
   handleSingOut(e) {
     e.preventDefault();
     //TODO add so we remove the cookie
     this.props.history.push('/');
     console.log("TRY TO SIGN OUT")
   }
+
+  handleClick(e) {
+    e.preventDefault();
+    const id = e.target.id;
+    //TODO add so we remove the cookie
+    this.props.history.push(`/portal/review?review_id=${id}`);
+    console.log("HANDLE CLICK")
+  }
+  
 
   componentWillMount() {
     const c = new Cookies();
@@ -45,8 +58,19 @@ class PortalHome extends React.Component {
             const access = json.accessCookie
             console.log(access)
             if (access === true) {
-               console.log("correct cookie ")
-             }
+              console.log("correct cookie ")
+              fetch('/api/reviews')
+                .then((res) => {
+                  if(res.status !== 200) {
+                    console.log('Looks like there was a problem. Status Code: ' +
+                      res.status);
+                    return;
+                  }
+                  console.log(res)
+                  res.json()
+                    .then(reviews => this.setState({ reviews }));
+                })
+            }
             else {
               console.log("Wrong cookie ")
               this.props.history.push('/')
@@ -67,6 +91,13 @@ class PortalHome extends React.Component {
           </div>
         </div>
         <div className="blueStripe"/>
+        <ul>
+          {this.state.reviews.map( r => 
+            <li onClick={this.handleClick.bind(this)} id={r.id} style={{color: 'black'}}>
+              Review: {r.course_review} Quality: {r.quality}/5
+            </li>
+          )}
+        </ul>
         <Footer/> 
       </div>
     );
