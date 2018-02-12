@@ -45,19 +45,24 @@ const fetchReviewsSpecific = (id, type, cb) => {
 
 /* GET reviews. */
 router.get('/', function(req, res) {
-  var course_id = req.param('course_id') ? req.param('course_id') : undefined;
-  var teacher_id = req.param('teacher_id') ? req.param('teacher_id') : undefined;
+  var review_id = req.param('review_id');
+  var course_id = req.param('course_id');
+  var teacher_id = req.param('teacher_id');
 
-  if(course_id === undefined && teacher_id === undefined) {
+  if(course_id === undefined && teacher_id === undefined && review_id === undefined) {
     fetchReviewsAll((error, reviews) => {
         res.json(reviews);
       })
-  } else if (course_id !== undefined && teacher_id == undefined) {
+  } else if (course_id !== undefined && teacher_id === undefined && review_id === undefined) {
     fetchReviewsSpecific(course_id, 'course_id', (error, reviews) => {
       res.json(reviews);
     })
-  } else if (course_id == undefined && teacher_id !== undefined) {
+  } else if (course_id === undefined && teacher_id !== undefined && review_id === undefined) {
     fetchReviewsSpecific(teacher_id, 'teacher_id', (error, reviews) => {
+      res.json(reviews);
+    })
+  } else if (course_id === undefined && teacher_id === undefined && review_id !== undefined) {
+    fetchReviewsSpecific(review_id, 'id', (error, reviews) => {
       res.json(reviews);
     })
   }
